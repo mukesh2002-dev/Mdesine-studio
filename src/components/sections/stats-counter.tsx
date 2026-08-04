@@ -1,6 +1,7 @@
 "use client";
 
 import { Building2, Award, Star, Clock, CheckCircle2 } from "lucide-react";
+import CountUp from "@/components/ui/count-up";
 
 export default function StatsCounter() {
   return (

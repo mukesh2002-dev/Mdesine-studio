@@ -155,7 +155,7 @@ Bihar-847211</p>
 
             <div className="flex items-center gap-2.5 text-xs">
               <Phone className="w-4 h-4 text-[#D9531E] shrink-0" />
-              <a href="tel:+918587008925" className="hover:text-white transition-colors">
+              <a href="tel:+917011733185" className="hover:text-white transition-colors">
                 +91 85870 08925, 70117 33185
               </a>
             </div>

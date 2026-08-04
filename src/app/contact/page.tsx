@@ -276,7 +276,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h4 className="font-bold text-[#061224]">Phone</h4>
-                      <a href="tel:+918587008925" className="text-slate-700 hover:text-[#D9531E] font-bold block">
+                      <a href="tel:+917011733185" className="text-slate-700 hover:text-[#D9531E] font-bold block">
                         +91 85870 08925, 70117 33185
                       </a>
                     </div>

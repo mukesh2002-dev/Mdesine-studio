@@ -11,6 +11,7 @@ import {
   Pause,
   Volume2,
   VolumeX,
+  Music,
   ArrowRight,
   Phone,
   MapPin,
@@ -81,7 +82,9 @@ export default function HeroCarousel({ onOpenConsultation }: HeroCarouselProps) 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
+  const [isMusicOn, setIsMusicOn] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   const slides = [
     {
@@ -147,10 +150,24 @@ export default function HeroCarousel({ onOpenConsultation }: HeroCarouselProps) 
     }
   };
 
+  const toggleMusic = () => {
+    if (audioRef.current) {
+      if (isMusicOn) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsMusicOn(!isMusicOn);
+    }
+  };
+
   return (
     <section className="relative w-full h-[580px] sm:h-[640px] lg:h-[700px] bg-[#061224] text-white overflow-hidden border-b border-slate-800">
       
-      {/* Slides Stack */}
+      {/* Background Music */}
+      <audio ref={audioRef} loop preload="none">
+        <source src="https://cdn.pixabay.com/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg" />
+      </audio>
       {slides.map((slide, idx) => {
         const isActive = idx === currentSlide;
         return (
@@ -252,7 +269,7 @@ export default function HeroCarousel({ onOpenConsultation }: HeroCarouselProps) 
                     transition={{ duration: 0.7, delay: 0.75 }}
                     className="pt-4 flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-slate-300 font-semibold"
                   >
-                    <a href="tel:+918587008925" className="flex items-center gap-2 hover:text-[#D9531E] transition-colors">
+                    <a href="tel:+917011733185" className="flex items-center gap-2 hover:text-[#D9531E] transition-colors">
                       <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center">
                         <Phone className="w-3.5 h-3.5 text-[#D9531E]" />
                       </div>
@@ -298,10 +315,19 @@ export default function HeroCarousel({ onOpenConsultation }: HeroCarouselProps) 
         {/* Play / Pause Toggle */}
         <button
           onClick={() => setIsPlaying(!isPlaying)}
-          className="text-slate-[#300] text-slate-300 hover:text-white transition-colors"
+          className="text-slate-300 hover:text-white transition-colors"
           aria-label={isPlaying ? "Pause carousel" : "Play carousel"}
         >
           {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+        </button>
+
+        {/* Music Toggle */}
+        <button
+          onClick={toggleMusic}
+          className="text-slate-300 hover:text-[#D9531E] transition-colors"
+          aria-label={isMusicOn ? "Mute music" : "Play music"}
+        >
+          {isMusicOn ? <Music className="w-4 h-4 text-[#D9531E]" /> : <Music className="w-4 h-4" />}
         </button>
 
         {/* Video Mute Toggle (visible if current slide is video) */}

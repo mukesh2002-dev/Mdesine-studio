@@ -226,7 +226,7 @@ export default function LocationsMap() {
             </div>
 
             <a
-              href="tel:+918587008925"
+              href="tel:+917011733185"
               className="w-full bg-[#D9531E] hover:bg-[#C84C1C] text-white font-bold py-3.5 rounded-xl shadow-md text-xs flex items-center justify-center gap-2 transition-colors"
             >
               <span>Connect With {currentLoc.name} Office</span>
