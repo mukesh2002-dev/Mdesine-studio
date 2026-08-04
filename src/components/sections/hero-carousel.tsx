@@ -82,7 +82,7 @@ export default function HeroCarousel({ onOpenConsultation }: HeroCarouselProps) 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
-  const [isMusicOn, setIsMusicOn] = useState(false);
+  const [isMusicOn, setIsMusicOn] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
@@ -155,18 +155,35 @@ export default function HeroCarousel({ onOpenConsultation }: HeroCarouselProps) 
       if (isMusicOn) {
         audioRef.current.pause();
       } else {
-        audioRef.current.play();
+        audioRef.current.currentTime = 0;
+        audioRef.current.play().catch(() => {});
       }
       setIsMusicOn(!isMusicOn);
     }
   };
 
+  // Auto-play music on mount + stop on unmount (navigate away)
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const playPromise = audio.play();
+    if (playPromise) {
+      playPromise.catch(() => {});
+    }
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
+
   return (
     <section className="relative w-full h-[580px] sm:h-[640px] lg:h-[700px] bg-[#061224] text-white overflow-hidden border-b border-slate-800">
       
       {/* Background Music */}
-      <audio ref={audioRef} loop preload="none">
-        <source src="https://cdn.pixabay.com/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg" />
+      <audio ref={audioRef} loop preload="auto">
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg" />
       </audio>
       {slides.map((slide, idx) => {
         const isActive = idx === currentSlide;

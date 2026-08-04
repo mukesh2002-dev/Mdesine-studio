@@ -305,71 +305,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ========================================================================= */}
-      {/* 6. OUR LEADERSHIP TEAM                                                    */}
-      {/* ========================================================================= */}
-      <section className="py-16 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-          <div className="flex items-center justify-between mb-10">
-            <div>
-              <h2 className="text-2xl sm:text-3xl font-black text-[#061224]">
-                Our Leadership <span className="text-[#D9531E]">Team</span>
-              </h2>
-            </div>
-            <Link href="/contact" className="text-xs sm:text-sm font-bold text-[#D9531E] hover:underline flex items-center gap-1">
-              <span>View All Team</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-            {[
-              {
-                name: "Mahesh Kumar Choudhary",
-                title: "Chief Architect & Founder",
-                initials: "MKC",
-              },
-              {
-                name: "Er. Amit Kumar",
-                title: "Structural Engineer",
-                initials: "AK",
-              },
-              {
-                name: "Ar. Priya Singh",
-                title: "Interior Designer",
-                initials: "PS",
-              },
-              {
-                name: "Er. Rahul Raj",
-                title: "Project Manager",
-                initials: "RR",
-              },
-            ].map((member, idx) => (
-              <div
-                key={idx}
-                className="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all p-6 text-center space-y-4"
-              >
-                <div className="w-24 h-24 rounded-full bg-[#061224] text-white font-bold text-2xl flex items-center justify-center mx-auto shadow-md border-2 border-[#D9531E]">
-                  {member.initials}
-                </div>
-                <div>
-                  <h3 className="font-bold text-sm text-[#061224]">{member.name}</h3>
-                  <p className="text-[11px] text-slate-500 font-medium">{member.title}</p>
-                </div>
-                <div className="flex items-center justify-center gap-3 text-slate-400 pt-2 border-t border-slate-200">
-                  <a href="https://facebook.com" className="hover:text-[#D9531E]"><FacebookIcon className="w-3.5 h-3.5" /></a>
-                  <a href="https://linkedin.com" className="hover:text-[#D9531E]"><LinkedinIcon className="w-3.5 h-3.5" /></a>
-                  <a href="mailto:mdesignstudio626@gmail.com" className="hover:text-[#D9531E]"><Mail className="w-3.5 h-3.5" /></a>
-                </div>
-              </div>
-            ))}
-
-          </div>
-        </div>
-      </section>
-
+      
       {/* ========================================================================= */}
       {/* 7. OUR JOURNEY TIMELINE (2009 to 2024)                                     */}
       {/* ========================================================================= */}

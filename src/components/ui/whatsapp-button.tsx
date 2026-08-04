@@ -4,7 +4,7 @@ import React from "react";
 
 export default function WhatsAppButton() {
   const whatsappUrl =
-    "https://wa.me/917011733185?text=Hello%20M%20Design%20Studio%2C%20I%20would%20like%20to%20inquire%20about%20architectural%20and%20interior%20design%20services.";
+    "https://wa.me/+917011731195?text=Hi%2C%20I'm%20interested%20in%20your%20services.%20Please%20share%20more%20details.";
 
   return (
     <a
