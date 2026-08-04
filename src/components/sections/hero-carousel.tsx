@@ -162,7 +162,7 @@ export default function HeroCarousel({ onOpenConsultation }: HeroCarouselProps) 
     }
   };
 
-  // Auto-play music on mount + stop on unmount (navigate away)
+  // Auto-play music on mount + stop on unmount / tab hide / page close
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -172,9 +172,25 @@ export default function HeroCarousel({ onOpenConsultation }: HeroCarouselProps) 
       playPromise.catch(() => {});
     }
 
+    const handleVisibility = () => {
+      if (document.hidden) {
+        audio.pause();
+      }
+    };
+
+    const handleBeforeUnload = () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+
+    document.addEventListener("visibilitychange", handleVisibility);
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
     return () => {
       audio.pause();
       audio.currentTime = 0;
+      document.removeEventListener("visibilitychange", handleVisibility);
+      window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, []);
 
