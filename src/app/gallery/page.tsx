@@ -29,6 +29,27 @@ export default function GalleryPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [visibleCount, setVisibleCount] = useState(12);
 
+  const [isFiltering, setIsFiltering] = useState(false);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
+
+  const handleCategoryChange = (catName: string) => {
+    if (catName === activeCategory) return;
+    setIsFiltering(true);
+    setActiveCategory(catName);
+    setVisibleCount(12);
+    setTimeout(() => {
+      setIsFiltering(false);
+    }, 300);
+  };
+
+  const handleLoadMore = () => {
+    setIsLoadingMore(true);
+    setTimeout(() => {
+      setVisibleCount((prev) => prev + 8);
+      setIsLoadingMore(false);
+    }, 400);
+  };
+
   const galleryCategories = [
     { name: "All Works", icon: Sparkles },
     { name: "Residential", icon: HomeIcon },
@@ -39,22 +60,40 @@ export default function GalleryPage() {
   ];
 
   const galleryItems = [
-    { id: 1, title: "Modern Luxury Villa Exterior", cat: "Residential", img: "/images/hero_luxury_villa.png" },
-    { id: 2, title: "Double-Height Luxury Living Room", cat: "Interior", img: "/images/modern_interior.png" },
-    { id: 3, title: "Multi-Story Residential Apartment", cat: "Residential", img: "/images/after_rendered.png" },
-    { id: 4, title: "Luxury Master Bedroom Design", cat: "Interior", img: "/images/modern_interior.png" },
-    { id: 5, title: "Modern Corporate Office Workspace", cat: "Commercial", img: "/images/commercial_complex.png" },
-    { id: 6, title: "Gourmet Kitchen & Dining", cat: "Interior", img: "/images/modern_interior.png" },
-    { id: 7, title: "Lush Garden Landscape with Path Lights", cat: "Landscape", img: "/images/after_rendered.png" },
-    { id: 8, title: "Contemporary Commercial Showroom", cat: "Commercial", img: "/images/commercial_complex.png" },
-    { id: 9, title: "Cozy Luxury Lounge Interior", cat: "Interior", img: "/images/modern_interior.png" },
-    { id: 10, title: "Modern Multi-Story Building Dusk View", cat: "Residential", img: "/images/hero_luxury_villa.png" },
-    { id: 11, title: "Indoor Atrium with Spiral Staircase", cat: "Interior", img: "/images/modern_interior.png" },
-    { id: 12, title: "Luxury Spa Bathroom with Freestanding Tub", cat: "Interior", img: "/images/modern_interior.png" },
-    { id: 13, title: "Open-Air Courtyard & Patio Lounge", cat: "Residential", img: "/images/after_rendered.png" },
-    { id: 14, title: "Executive Conference Boardroom", cat: "Commercial", img: "/images/commercial_complex.png" },
-    { id: 15, title: "Modern TV Unit & Living Area", cat: "Interior", img: "/images/modern_interior.png" },
-    { id: 16, title: "Institutional Campus Architecture", cat: "Institutional", img: "/images/commercial_complex.png" },
+    { id: 1, title: "Modern Luxury Villa Exterior", cat: "Residential", img: "/images/Gallery/Residential.jpeg" },
+    { id: 2, title: "Contemporary Duplex Front Elevation", cat: "Residential", img: "/images/Gallery/Residential2.jpg" },
+    { id: 3, title: "Modern Minimalist Villa Exterior", cat: "Residential", img: "/images/Gallery/Residential3.jpeg" },
+    { id: 4, title: "Urban House Architectural Design", cat: "Residential", img: "/images/Gallery/Residential4.jpg" },
+    { id: 5, title: "Premium Corner Plot Villa Elevation", cat: "Residential", img: "/images/Gallery/Residential5.jpg" },
+    { id: 6, title: "Contemporary Double Story Home", cat: "Residential", img: "/images/Gallery/Residential6.jpg" },
+    { id: 7, title: "Modern Residential Architecture", cat: "Residential", img: "/images/Gallery/Residential7.jpeg" },
+    { id: 8, title: "Custom Luxury Villa Facade", cat: "Residential", img: "/images/Gallery/Residential8.jpg" },
+    { id: 9, title: "Residential Apartment Building", cat: "Residential", img: "/images/Gallery/Residential9.jpeg" },
+    { id: 10, title: "Modern Multi-Story House", cat: "Residential", img: "/images/Gallery/Residential10.jpg" },
+    { id: 11, title: "Premium Residential Villa Exterior", cat: "Residential", img: "/images/Gallery/Residential11.jpg" },
+    { id: 12, title: "Architectural Exterior Residence", cat: "Residential", img: "/images/Gallery/Residential12.jpg" },
+    { id: 13, title: "Luxury Family Bungalow Exterior", cat: "Residential", img: "/images/Gallery/Residential13.jpg" },
+    { id: 14, title: "Urban Residence Front Elevation", cat: "Residential", img: "/images/Gallery/Residential14 (1).jpg" },
+    { id: 15, title: "Modern Duplex House Architecture", cat: "Residential", img: "/images/Gallery/Residential14 (2).jpg" },
+    { id: 16, title: "Modern Villa Night Elevation", cat: "Residential", img: "/images/Gallery/Residential14 (3).jpg" },
+    { id: 17, title: "Elegant Residential Block", cat: "Residential", img: "/images/Gallery/Residential15.jpeg" },
+    { id: 18, title: "Sleek Modern Home Facade", cat: "Residential", img: "/images/Gallery/Residential16.jpg" },
+    { id: 19, title: "Minimalist Modern House Exterior", cat: "Residential", img: "/images/Gallery/Residential17.jpg" },
+    { id: 20, title: "Custom Modern Villa Design", cat: "Residential", img: "/images/Gallery/Residential18.jpeg" },
+    { id: 21, title: "Urban Residential Tower", cat: "Residential", img: "/images/Gallery/Residential19.jpeg" },
+    { id: 22, title: "Grand Residential Mansion", cat: "Residential", img: "/images/Gallery/Residential20.jpeg" },
+    { id: 23, title: "Contemporary Duplex Living Space", cat: "Residential", img: "/images/Gallery/Residential21.jpg" },
+    { id: 24, title: "Modern Commercial Plaza Complex", cat: "Commercial", img: "/images/Gallery/Commercial2.jpg" },
+    { id: 25, title: "Corporate Business Center Facade", cat: "Commercial", img: "/images/Gallery/Commercial3.jpeg" },
+    { id: 26, title: "Glass Facade Commercial Building", cat: "Commercial", img: "/images/Gallery/Commercial4.jpg" },
+    { id: 27, title: "Institutional Campus Main Block", cat: "Institutional", img: "/images/Gallery/Institutional.jpeg" },
+    { id: 28, title: "Educational Institute Architecture", cat: "Institutional", img: "/images/Gallery/Institutional4 (1).jpeg" },
+    { id: 29, title: "Academic & Administrative Building", cat: "Institutional", img: "/images/Gallery/Institutional4 (2).jpeg" },
+    { id: 30, title: "School & College Campus Structure", cat: "Institutional", img: "/images/Gallery/Institutional4 (3).jpeg" },
+    { id: 31, title: "Urban Landscape & Courtyard Garden", cat: "Landscape", img: "/images/Gallery/Landscape (1).jpeg" },
+    { id: 32, title: "Modern Villa Garden & Pathway", cat: "Landscape", img: "/images/Gallery/Landscape (1).jpg" },
+    { id: 33, title: "Architectural Exterior Landscaping", cat: "Landscape", img: "/images/Gallery/Landscape (2).jpg" },
+    { id: 34, title: "Luxury Living Room Interior", cat: "Interior", img: "/images/modern_interior.png" },
   ];
 
   const filteredItems =
@@ -153,7 +192,7 @@ export default function GalleryPage() {
                 return (
                   <button
                     key={cat.name}
-                    onClick={() => setActiveCategory(cat.name)}
+                    onClick={() => handleCategoryChange(cat.name)}
                     className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                       isActive
                         ? "bg-[#D9531E] text-white shadow-md"
@@ -198,65 +237,54 @@ export default function GalleryPage() {
       <section className="py-12 bg-slate-50 border-b border-slate-200 min-h-[600px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div
-            className={
-              viewMode === "grid"
-                ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                : "space-y-6"
-            }
-          >
-            {displayedItems.map((item) => (
-              <div
-                key={item.id}
-                onClick={() => setSelectedImage(item.img)}
-                className={`group relative bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all cursor-pointer ${
-                  viewMode === "list" ? "flex flex-col md:flex-row items-center" : ""
-                }`}
-              >
+          {isFiltering ? (
+            <div className={viewMode === "grid" ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" : "space-y-6"}>
+              {Array.from({ length: 8 }).map((_, idx) => (
                 <div
-                  className={`relative overflow-hidden ${
-                    viewMode === "list" ? "w-full md:w-80 h-56 shrink-0" : "h-64 w-full"
-                  }`}
+                  key={idx}
+                  className="bg-white rounded-2xl overflow-hidden border border-slate-200 p-3 space-y-3 animate-pulse"
                 >
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 text-center space-y-2">
-                    <div className="w-10 h-10 rounded-full bg-[#D9531E] text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
-                      <ZoomIn className="w-5 h-5" />
-                    </div>
-                    <span className="text-xs bg-[#061224] text-white px-2.5 py-0.5 rounded font-bold uppercase">
-                      {item.cat}
-                    </span>
-                    <h3 className="font-bold text-xs text-white leading-snug">{item.title}</h3>
+                  <div className="h-64 bg-slate-200 rounded-xl relative overflow-hidden flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-full border-2 border-slate-300 border-t-[#D9531E] animate-spin" />
                   </div>
+                  <div className="h-4 bg-slate-200 rounded w-3/4" />
+                  <div className="h-3 bg-slate-200 rounded w-1/2" />
                 </div>
-
-                {viewMode === "list" && (
-                  <div className="p-5 flex-1 space-y-2">
-                    <span className="text-[10px] bg-[#D9531E] text-white px-2 py-0.5 rounded font-bold uppercase">
-                      {item.cat}
-                    </span>
-                    <h3 className="font-bold text-base text-[#061224]">{item.title}</h3>
-                    <p className="text-xs text-slate-500">Click image to view high-resolution architectural photo</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div
+              className={
+                viewMode === "grid"
+                  ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                  : "space-y-6"
+              }
+            >
+              {displayedItems.map((item) => (
+                <GalleryCard key={item.id} item={item} viewMode={viewMode} onSelect={setSelectedImage} />
+              ))}
+            </div>
+          )}
 
           {/* Load More Button */}
           {visibleCount < filteredItems.length && (
             <div className="mt-12 text-center">
               <Button
-                onClick={() => setVisibleCount((prev) => prev + 4)}
-                className="bg-[#D9531E] hover:bg-[#C84C1C] text-white font-bold px-8 py-3.5 rounded-xl shadow-lg flex items-center gap-2 text-xs mx-auto"
+                onClick={handleLoadMore}
+                disabled={isLoadingMore}
+                className="bg-[#D9531E] hover:bg-[#C84C1C] text-white font-bold px-8 py-3.5 rounded-xl shadow-lg flex items-center gap-2 text-xs mx-auto transition-all"
               >
-                <span>Load More</span>
-                <RefreshCw className="w-4 h-4" />
+                {isLoadingMore ? (
+                  <>
+                    <div className="w-4 h-4 rounded-full border-2 border-white/40 border-t-white animate-spin" />
+                    <span>Loading More...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Load More Images ({filteredItems.length - visibleCount} remaining)</span>
+                    <RefreshCw className="w-4 h-4" />
+                  </>
+                )}
               </Button>
             </div>
           )}
@@ -341,6 +369,69 @@ export default function GalleryPage() {
 
       <ConsultationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
+    </div>
+  );
+}
+
+function GalleryCard({
+  item,
+  viewMode,
+  onSelect,
+}: {
+  item: { id: number; title: string; cat: string; img: string };
+  viewMode: "grid" | "list";
+  onSelect: (img: string) => void;
+}) {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <div
+      onClick={() => onSelect(item.img)}
+      className={`group relative bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all cursor-pointer ${
+        viewMode === "list" ? "flex flex-col md:flex-row items-center" : ""
+      }`}
+    >
+      <div
+        className={`relative overflow-hidden bg-slate-100 ${
+          viewMode === "list" ? "w-full md:w-80 h-56 shrink-0" : "h-64 w-full"
+        }`}
+      >
+        {!isLoaded && (
+          <div className="absolute inset-0 bg-slate-200 animate-pulse z-10 flex flex-col items-center justify-center space-y-2">
+            <div className="w-7 h-7 rounded-full border-2 border-slate-300 border-t-[#D9531E] animate-spin" />
+            <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Loading...</span>
+          </div>
+        )}
+
+        <Image
+          src={item.img}
+          alt={item.title}
+          fill
+          onLoad={() => setIsLoaded(true)}
+          className={`object-cover group-hover:scale-105 transition-all duration-500 ${
+            isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
+          }`}
+        />
+        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 text-center space-y-2 z-20">
+          <div className="w-10 h-10 rounded-full bg-[#D9531E] text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+            <ZoomIn className="w-5 h-5" />
+          </div>
+          <span className="text-xs bg-[#061224] text-white px-2.5 py-0.5 rounded font-bold uppercase">
+            {item.cat}
+          </span>
+          <h3 className="font-bold text-xs text-white leading-snug">{item.title}</h3>
+        </div>
+      </div>
+
+      {viewMode === "list" && (
+        <div className="p-5 flex-1 space-y-2">
+          <span className="text-[10px] bg-[#D9531E] text-white px-2 py-0.5 rounded font-bold uppercase">
+            {item.cat}
+          </span>
+          <h3 className="font-bold text-base text-[#061224]">{item.title}</h3>
+          <p className="text-xs text-slate-500">Click image to view high-resolution architectural photo</p>
+        </div>
+      )}
     </div>
   );
 }

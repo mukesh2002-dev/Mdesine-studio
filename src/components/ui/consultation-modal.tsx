@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Calendar, Phone, User, Mail, MapPin, Building, ArrowRight, CheckCircle2 } from "lucide-react";
@@ -34,18 +35,29 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[480px] p-0 overflow-hidden bg-[#061224] text-white border border-slate-800 shadow-2xl">
         <DialogHeader className="p-6 bg-[#0B192C] border-b border-slate-800 relative">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-[#D9531E] flex items-center justify-center text-white shadow-md">
-              <Calendar className="w-5 h-5" />
+          <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-800/60 mb-4">
+            {/* White Card Wrapper for Logo Pop & High Contrast */}
+            <div className="bg-white px-4 py-2 rounded-xl shadow-lg border border-slate-100 flex items-center justify-center">
+              <div className="relative h-12 w-48 sm:w-56">
+                <Image
+                  src="/logo.svg"
+                  alt="M Design Studio Logo"
+                  fill
+                  className="object-contain object-left"
+                  priority
+                />
+              </div>
             </div>
-            <div>
-              <DialogTitle className="text-xl font-bold text-white">
-                Book  Consultation
-              </DialogTitle>
-              <DialogDescription className="text-slate-400 text-xs mt-0.5">
-                Speak directly with Mahesh Kumar Choudhary & Expert Architectural Team
-              </DialogDescription>
-            </div>
+            
+          </div>
+          <div>
+            <DialogTitle className="text-xl font-bold text-white flex items-center gap-2">
+              <Calendar className="w-5 h-5 text-[#D9531E]" />
+              <span>Book Architectural Consultation</span>
+            </DialogTitle>
+            <DialogDescription className="text-slate-400 text-xs mt-1">
+              Speak directly with Ar. Mahesh Kumar Choudhary & Expert Architectural Team
+            </DialogDescription>
           </div>
         </DialogHeader>
 

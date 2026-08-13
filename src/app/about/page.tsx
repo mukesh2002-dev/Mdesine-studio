@@ -85,7 +85,7 @@ export default function AboutPage() {
 
               <div className="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
                 <p>
-                  Led by Empaneled Architect Mahesh Kumar Choudhary, our studio has been at the forefront of architectural excellence in Patna, Madhubani and across Bihar. We believe every space has the power to inspire, improve life and leave a lasting impact.
+                  Led by Empaneled Architect Ar. Mahesh Kumar Choudhary, our studio has been at the forefront of architectural excellence in Patna, Madhubani and across Bihar. We believe every space has the power to inspire, improve life and leave a lasting impact.
                 </p>
                 <p>
                   With a perfect blend of creativity, technology and expertise, we provide end-to-end architectural, interior and planning solutions for residential, commercial, institutional and industrial projects.
@@ -95,7 +95,7 @@ export default function AboutPage() {
               {/* Signature */}
               <div className="pt-4">
                 <div className="font-serif italic text-2xl text-[#D9531E] font-bold">
-                  Mahesh Kumar Choudhary
+                  Ar. Mahesh Kumar Choudhary
                 </div>
                 <div className="text-xs text-slate-500 font-bold uppercase tracking-wider mt-0.5">
                   Chief Architect & Founder

@@ -20,81 +20,23 @@ import {
 import { Button } from "@/components/ui/button";
 import ConsultationModal from "@/components/ui/consultation-modal";
 
+import { servicesData } from "@/data/services-data";
+
+const iconMap: Record<string, any> = {
+  Building2,
+  Palette,
+  Layers,
+  Compass,
+  Eye,
+  Calculator,
+  HardHat,
+  FileCheck,
+  CheckCircle2,
+  Trees,
+};
+
 export default function ServicesPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const servicesList = [
-    {
-      id: "architectural",
-      title: "Architectural Design",
-      desc: "Innovative & functional architectural solutions for residential, commercial & institutional projects.",
-      img: "/images/hero_luxury_villa.png",
-      icon: Building2,
-    },
-    {
-      id: "interior",
-      title: "Interior Design",
-      desc: "Beautiful, modern and comfortable interior spaces tailored to your lifestyle and requirements.",
-      img: "/images/modern_interior.png",
-      icon: Palette,
-    },
-    {
-      id: "structural",
-      title: "Structural Design",
-      desc: "Safe, sustainable & cost-effective structural design solutions by expert engineers.",
-      img: "/images/before_sketch.png",
-      icon: Layers,
-    },
-    {
-      id: "vastu",
-      title: "Vastu Consulting",
-      desc: "Vastu-compliant designs for positive energy, health, wealth & happiness.",
-      img: "/images/before_sketch.png",
-      icon: Compass,
-    },
-    {
-      id: "3d-visualization",
-      title: "3D Visualisation",
-      desc: "Realistic 3D renders & walkthroughs to help you visualize your dream project before it's built.",
-      img: "/images/after_rendered.png",
-      icon: Eye,
-    },
-    {
-      id: "estimation",
-      title: "Estimation & Costing",
-      desc: "Accurate estimation & cost planning to ensure transparency & budget control.",
-      img: "/images/before_sketch.png",
-      icon: Calculator,
-    },
-    {
-      id: "site-mgmt",
-      title: "Site Management",
-      desc: "Professional site supervision to ensure quality construction & timely completion.",
-      img: "/images/commercial_complex.png",
-      icon: HardHat,
-    },
-    {
-      id: "drawing-approval",
-      title: "Drawing Approval",
-      desc: "Municipal drawing approval support & documentation made hassle.",
-      img: "/images/before_sketch.png",
-      icon: FileCheck,
-    },
-    {
-      id: "end-to-end",
-      title: "End to End Services",
-      desc: "From concept, design, approvals to execution & handover - we manage it all for you.",
-      img: "/images/after_rendered.png",
-      icon: CheckCircle2,
-    },
-    {
-      id: "landscape",
-      title: "Landscape Design",
-      desc: "Green, sustainable & beautiful landscape designs that enhance your spaces.",
-      img: "/images/after_rendered.png",
-      icon: Trees,
-    },
-  ];
 
   return (
     <div className="space-y-0">
@@ -105,7 +47,7 @@ export default function ServicesPage() {
       <section className="relative bg-[#061224] text-white py-16 lg:py-24 overflow-hidden border-b border-slate-800">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero_luxury_villa.png"
+            src="/images/Gallery/Residential12.jpg"
             alt="Architecture Services Background"
             fill
             priority
@@ -168,8 +110,8 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {servicesList.map((service) => {
-              const IconComponent = service.icon;
+            {servicesData.map((service) => {
+              const IconComponent = iconMap[service.iconName] || Building2;
               return (
                 <div
                   key={service.id}
@@ -181,32 +123,34 @@ export default function ServicesPage() {
                       <div className="w-10 h-10 rounded-xl bg-orange-100 text-[#D9531E] flex items-center justify-center shrink-0">
                         <IconComponent className="w-5 h-5" />
                       </div>
-                      <h3 className="font-bold text-sm text-[#061224] leading-snug">
-                        {service.title}
-                      </h3>
+                      <Link href={`/services/${service.id}`}>
+                        <h3 className="font-bold text-sm text-[#061224] hover:text-[#D9531E] transition-colors leading-snug">
+                          {service.title}
+                        </h3>
+                      </Link>
                     </div>
 
                     <p className="text-xs text-slate-600 leading-relaxed min-h-[48px]">
-                      {service.desc}
+                      {service.shortDesc}
                     </p>
                   </div>
 
-                  {/* Card Image */}
+                  {/* Card Image & Detail Link */}
                   <div className="relative h-36 w-full">
                     <Image
-                      src={service.img}
+                      src={service.heroImg}
                       alt={service.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <button
-                      onClick={() => setIsModalOpen(true)}
-                      className="absolute bottom-3 left-3 text-xs font-bold text-white hover:text-[#D9531E] flex items-center gap-1 transition-colors"
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <Link
+                      href={`/services/${service.id}`}
+                      className="absolute bottom-3 left-3 text-xs font-bold text-white hover:text-[#D9531E] flex items-center gap-1 transition-colors bg-[#061224]/80 px-2.5 py-1 rounded-md border border-white/20 backdrop-blur-xs"
                     >
-                      <span>Learn More</span>
+                      <span>Explore Service Details</span>
                       <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               );

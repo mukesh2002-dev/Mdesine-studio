@@ -59,7 +59,7 @@ export default function VisionToReality() {
 
             <div className="pt-4 border-t border-slate-800">
               <div className="font-serif italic text-lg text-amber-400 font-bold tracking-wide">
-                Mahesh Kumar Choudhary
+                Ar. Mahesh Kumar Choudhary
               </div>
               <div className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">
                 Chief Architect & Founder

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -42,35 +43,30 @@ export default function Navbar() {
     <>
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex h-20 items-center justify-between gap-4">
+          <div className="flex h-20 items-center justify-between gap-2 xl:gap-4 overflow-visible">
             
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-11 h-11 bg-[#061224] rounded-lg flex items-center justify-center text-white font-extrabold text-2xl shadow-md border border-slate-800 tracking-tighter group-hover:bg-[#0B192C] transition-colors relative overflow-hidden">
-                <span className="relative z-10 text-white font-serif">M</span>
-                <div className="absolute right-0 bottom-0 w-4 h-4 bg-[#D9531E] transform rotate-45 translate-x-2 translate-y-2"></div>
-              </div>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-1.5">
-                  <span className="text-xl sm:text-2xl font-black tracking-tight text-[#061224] font-sans">
-                    DESIGN STUDIO
-                  </span>
-                </div>
-                <div className="bg-[#D9531E] text-[9px] sm:text-[10px] font-bold text-white uppercase px-1.5 py-0.5 rounded tracking-widest text-center">
-                  MAHESH KUMAR CHOUDHARY
-                </div>
+            <Link href="/" className="flex items-center group shrink-0 pr-6">
+              <div className="relative h-14 sm:h-16 w-52 sm:w-64 scale-[1.45] origin-left transition-transform group-hover:scale-[1.5]">
+                <Image
+                  src="/logo.svg"
+                  alt="M Design Studio Logo"
+                  fill
+                  className="object-contain object-left"
+                  priority
+                />
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+            <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 shrink-0">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
                   <div key={link.href} className="relative group">
                     <Link
                       href={link.href}
-                      className={`px-3 py-2 text-sm font-semibold transition-all rounded-md flex items-center gap-1 ${
+                      className={`px-2 xl:px-3 py-2 text-xs xl:text-sm font-semibold transition-all rounded-md flex items-center gap-1 ${
                         isActive
                           ? "text-[#D9531E] border-b-2 border-[#D9531E] rounded-b-none"
                           : "text-slate-700 hover:text-[#D9531E] hover:bg-slate-50"
@@ -102,10 +98,10 @@ export default function Navbar() {
             </nav>
 
             {/* Right Action Button */}
-            <div className="hidden sm:flex items-center gap-3">
+            <div className="hidden sm:flex items-center gap-3 shrink-0">
               <Button
                 onClick={() => setIsModalOpen(true)}
-                className="bg-[#D9531E] hover:bg-[#C84C1C] text-white font-bold px-5 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center gap-2 text-sm"
+                className="bg-[#D9531E] hover:bg-[#C84C1C] text-white font-bold px-3.5 xl:px-5 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center gap-2 text-xs xl:text-sm"
               >
                 <span>Get  Consultation</span>
                 <ArrowRight className="w-4 h-4" />
@@ -123,12 +119,17 @@ export default function Navbar() {
                   <div className="flex flex-col h-full">
                     {/* Header */}
                     <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-[#061224] rounded flex items-center justify-center text-white font-bold">
-                          M
+                      <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center">
+                        <div className="relative h-16 sm:h-18 w-60 sm:w-72">
+                          <Image
+                            src="/logo.svg"
+                            alt="M Design Studio Logo"
+                            fill
+                            className="object-contain object-left"
+                            priority
+                          />
                         </div>
-                        <span className="font-bold text-sm text-[#061224]">M DESIGN STUDIO</span>
-                      </div>
+                      </Link>
                       <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
                         <X className="h-5 w-5 text-slate-500" />
                       </Button>

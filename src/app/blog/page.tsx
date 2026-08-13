@@ -18,6 +18,8 @@ import {
 import { Button } from "@/components/ui/button";
 import ConsultationModal from "@/components/ui/consultation-modal";
 
+import { blogPosts } from "@/data/blog-posts";
+
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState("All Posts");
   const [searchQuery, setSearchQuery] = useState("");
@@ -34,59 +36,11 @@ export default function BlogPage() {
     { name: "Sustainability", count: 10 },
   ];
 
-  const blogPosts = [
-    {
-      id: 1,
-      category: "Architecture",
-      date: "May 20, 2024",
-      readTime: "5 min read",
-      title: "Modern Architecture Trends Shaping the Future of Homes",
-      desc: "Discover the latest architectural trends that are redefining modern homes. From sustainable materials to smart design concepts, explore what's shaping the future.",
-      img: "/images/hero_luxury_villa.png",
-    },
-    {
-      id: 2,
-      category: "Interior Design",
-      date: "May 14, 2024",
-      readTime: "4 min read",
-      title: "Minimalist Interior Design: Less is More",
-      desc: "Learn how minimalist interior design creates serene, functional spaces with elegance and simplicity while maximizing space and natural light.",
-      img: "/images/modern_interior.png",
-    },
-    {
-      id: 3,
-      category: "Construction",
-      date: "May 08, 2024",
-      readTime: "6 min read",
-      title: "Step-by-Step Construction Process: From Concept to Creation",
-      desc: "A detailed guide on our construction process that ensures quality, transparency, and timely delivery for every project we undertake.",
-      img: "/images/before_sketch.png",
-    },
-    {
-      id: 4,
-      category: "Sustainability",
-      date: "Apr 30, 2024",
-      readTime: "5 min read",
-      title: "Sustainable Architecture: Building for a Better Tomorrow",
-      desc: "Sustainable architecture is the need of the hour. Explore how eco-friendly design and green building practices help create a better future.",
-      img: "/images/after_rendered.png",
-    },
-    {
-      id: 5,
-      category: "Commercial",
-      date: "Apr 22, 2024",
-      readTime: "4 min read",
-      title: "Designing Commercial Spaces That Inspire Productivity",
-      desc: "Learn how well-designed commercial spaces can boost productivity, enhance employee well-being, and reflect your brand identity.",
-      img: "/images/commercial_complex.png",
-    },
-  ];
-
   const popularPosts = [
-    { id: 1, title: "How to Choose the Right Architect for Your Project", date: "May 18, 2024", img: "/images/hero_luxury_villa.png" },
-    { id: 2, title: "Top 7 Living Room Design Ideas for Modern Homes", date: "May 10, 2024", img: "/images/modern_interior.png" },
-    { id: 3, title: "Vastu Tips for Home: Design Harmonious Spaces", date: "Apr 28, 2024", img: "/images/after_rendered.png" },
-    { id: 4, title: "3D Visualization: Bringing Your Dream to Life", date: "Apr 15, 2024", img: "/images/commercial_complex.png" },
+    { id: 1, title: "Modern Architecture Trends Shaping the Future of Homes", date: "May 20, 2024", img: "/images/Gallery/Residential12.jpg" },
+    { id: 2, title: "Minimalist Interior Design: Less is More", date: "May 14, 2024", img: "/images/modern_interior.png" },
+    { id: 3, title: "Step-by-Step Construction Process", date: "May 08, 2024", img: "/images/before_sketch.png" },
+    { id: 4, title: "Sustainable Architecture Principles", date: "Apr 30, 2024", img: "/images/Gallery/Landscape (1).jpeg" },
   ];
 
   const tagCloud = [
@@ -214,7 +168,7 @@ export default function BlogPage() {
                   key={post.id}
                   className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all flex flex-col md:flex-row items-center group"
                 >
-                  <div className="relative h-60 w-full md:w-72 shrink-0 overflow-hidden">
+                  <Link href={`/blog/${post.id}`} className="relative h-60 w-full md:w-72 shrink-0 overflow-hidden block">
                     <Image
                       src={post.img}
                       alt={post.title}
@@ -224,7 +178,7 @@ export default function BlogPage() {
                     <span className="absolute top-3 left-3 bg-[#D9531E] text-white text-[10px] font-black uppercase px-2.5 py-1 rounded shadow">
                       {post.category}
                     </span>
-                  </div>
+                  </Link>
 
                   <div className="p-6 flex-1 space-y-3">
                     <div className="flex items-center gap-4 text-[11px] text-slate-400 font-semibold">
@@ -236,21 +190,23 @@ export default function BlogPage() {
                       </span>
                     </div>
 
-                    <h2 className="text-lg font-bold text-[#061224] group-hover:text-[#D9531E] transition-colors leading-snug">
-                      {post.title}
-                    </h2>
+                    <Link href={`/blog/${post.id}`} className="block">
+                      <h2 className="text-lg font-bold text-[#061224] group-hover:text-[#D9531E] transition-colors leading-snug">
+                        {post.title}
+                      </h2>
+                    </Link>
 
                     <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
-                      {post.desc}
+                      {post.excerpt}
                     </p>
 
-                    <button
-                      onClick={() => setIsModalOpen(true)}
-                      className="text-xs font-bold text-[#D9531E] hover:underline flex items-center gap-1 pt-1"
+                    <Link
+                      href={`/blog/${post.id}`}
+                      className="text-xs font-bold text-[#D9531E] hover:underline inline-flex items-center gap-1 pt-1"
                     >
-                      <span>Read More</span>
+                      <span>Read Full Article</span>
                       <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
+                    </Link>
                   </div>
                 </article>
               ))}

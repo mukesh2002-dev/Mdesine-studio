@@ -9,31 +9,31 @@ export default function FeaturedProjects() {
     {
       title: "Luxury Villa",
       location: "Patna",
-      img: "/images/hero_luxury_villa.png",
+      img: "/images/Gallery/Residential2.jpg",
       tag: "Residential",
     },
     {
       title: "Commercial Complex",
       location: "Madhubani",
-      img: "/images/commercial_complex.png",
+      img: "/images/Gallery/Commercial2.jpg",
       tag: "Commercial",
     },
     {
       title: "Modern Apartment",
       location: "Darbhanga",
-      img: "/images/after_rendered.png",
+      img: "/images/Gallery/Residential10.jpg",
       tag: "Apartment",
     },
     {
       title: "School Building",
       location: "Khajauli",
-      img: "/images/commercial_complex.png",
+      img: "/images/Gallery/Institutional.jpeg",
       tag: "Institutional",
     },
     {
       title: "Hospital Building",
       location: "Patna",
-      img: "/images/hero_luxury_villa.png",
+      img: "/images/Gallery/Residential12.jpg",
       tag: "Hospital",
     },
   ];

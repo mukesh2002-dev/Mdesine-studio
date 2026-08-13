@@ -18,6 +18,7 @@ import WhyChooseUs from "@/components/sections/why-choose-us";
 import ServiceFeatures from "@/components/sections/service-features";
 import Testimonials from "@/components/sections/testimonials";
 import LocationsMap from "@/components/sections/locations-map";
+import AeoFaq from "@/components/sections/aeo-faq";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -57,6 +58,9 @@ export default function Home() {
 
       {/* 11. OUR PROJECT LOCATIONS (REDESIGNED INTERACTIVE BIHAR MAP & CITIES) */}
       <LocationsMap />
+
+      {/* 12. FREQUENTLY ASKED QUESTIONS (AEO & FAQ SCHEMA) */}
+      <AeoFaq />
 
       {/* 12. LATEST BLOG POSTS */}
       <section className="py-16 bg-white border-b border-slate-200">

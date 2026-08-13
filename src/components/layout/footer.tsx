@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { FacebookIcon, InstagramIcon } from "@/components/ui/social-icons";
 
@@ -14,18 +15,14 @@ export default function Footer() {
           
           {/* Col 1: About & Social */}
           <div className="lg:col-span-1 space-y-4">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-[#061224] rounded-lg flex items-center justify-center text-white font-extrabold text-xl shadow border border-slate-700 relative overflow-hidden">
-                <span className="relative z-10 text-white font-serif">M</span>
-                <div className="absolute right-0 bottom-0 w-3 h-3 bg-[#D9531E] transform rotate-45 translate-x-1 translate-y-1"></div>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-lg font-black tracking-tight text-white font-sans">
-                  DESIGN STUDIO
-                </span>
-                <span className="bg-[#D9531E] text-[8px] font-bold text-white uppercase px-1 py-0.2 rounded tracking-widest text-center">
-                  MAHESH KUMAR CHOUDHARY
-                </span>
+            <Link href="/" className="flex items-center group">
+              <div className="relative h-20 sm:h-24 w-[340px] sm:w-[480px] transition-transform group-hover:scale-105">
+                <Image
+                  src="/logo.svg"
+                  alt="M Design Studio Logo"
+                  fill
+                  className="object-contain object-left"
+                />
               </div>
             </Link>
             

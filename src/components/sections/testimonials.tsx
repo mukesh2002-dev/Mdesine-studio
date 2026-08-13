@@ -11,7 +11,7 @@ export default function Testimonials() {
     {
       id: 1,
       quote:
-        "M Design Studio understood our vision perfectly and delivered beyond our expectations! Mahesh Kumar Choudhary and his architectural team designed our luxury villa in Patna with incredible attention to detail, Vastu compliance, and complete map approval handling.",
+        "M Design Studio understood our vision perfectly and delivered beyond our expectations! Ar. Mahesh Kumar Choudhary and his architectural team designed our luxury villa in Patna with incredible attention to detail, Vastu compliance, and complete map approval handling.",
       author: "Rajesh Kumar",
       role: "Homeowner",
       location: "Patna, Bihar",
