@@ -18,6 +18,7 @@ import {
   RefreshCw,
   ArrowRight,
   ZoomIn,
+  Play,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ConsultationModal from "@/components/ui/consultation-modal";
@@ -27,6 +28,7 @@ export default function GalleryPage() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [visibleCount, setVisibleCount] = useState(12);
 
   const [isFiltering, setIsFiltering] = useState(false);
@@ -57,6 +59,7 @@ export default function GalleryPage() {
     { name: "Interior", icon: Palette },
     { name: "Landscape", icon: Trees },
     { name: "Institutional", icon: GraduationCap },
+    { name: "Video", icon: Play },
   ];
 
   const galleryItems = [
@@ -94,12 +97,17 @@ export default function GalleryPage() {
     { id: 32, title: "Modern Villa Garden & Pathway", cat: "Landscape", img: "/images/Gallery/Landscape (1).jpg" },
     { id: 33, title: "Architectural Exterior Landscaping", cat: "Landscape", img: "/images/Gallery/Landscape (2).jpg" },
     { id: 34, title: "Luxury Living Room Interior", cat: "Interior", img: "/images/modern_interior.png" },
+    { id: 35, title: "Garden Landscape Detail", cat: "Landscape", img: "/images/Gallery/landscape_232.jpeg" },
+    { id: 36, title: "Outdoor Landscape View", cat: "Landscape", img: "/images/Gallery/landscape_231.jpeg" },
+
   ];
 
   const filteredItems =
     activeCategory === "All Works"
       ? galleryItems
-      : galleryItems.filter((item) => item.cat === activeCategory);
+      : activeCategory === "Video"
+        ? []
+        : galleryItems.filter((item) => item.cat === activeCategory);
 
   const displayedItems = filteredItems.slice(0, visibleCount);
 
@@ -232,12 +240,44 @@ export default function GalleryPage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. RICH GALLERY GRID                                                      */}
+      
+
+      {/* ========================================================================= */}
+      {/* 4. RICH GALLERY GRID                                                      */}
       {/* ========================================================================= */}
       <section className="py-12 bg-slate-50 border-b border-slate-200 min-h-[600px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {isFiltering ? (
+          {activeCategory === "Video" ? (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+              <div className="space-y-4">
+                <div className="text-[#D9531E] font-extrabold text-[10px] tracking-[0.2em] uppercase">
+                  Video Showcase
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-black text-[#061224] leading-tight">
+                  Architectural walkthrough in motion.
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Explore our residential design story through an immersive presentation that combines space planning, material finishes, and overall atmosphere.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-[10px] font-bold uppercase bg-[#D9531E]/10 text-[#D9531E] px-2.5 py-1 rounded-full">Residential</span>
+                  <span className="text-[10px] font-bold uppercase bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full">Walkthrough</span>
+                </div>
+              </div>
+
+              <div className="overflow-hidden rounded-[28px] border border-slate-200 bg-slate-100 shadow-xl">
+                <video
+                  controls
+                  autoPlay
+                  className="w-full h-[360px] md:h-[420px] object-cover"
+                  poster="/images/Gallery/Residential18.jpeg"
+                >
+                  <source src="/images/Gallery/Residentialvideo.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          ) : isFiltering ? (
             <div className={viewMode === "grid" ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" : "space-y-6"}>
               {Array.from({ length: 8 }).map((_, idx) => (
                 <div
@@ -267,7 +307,7 @@ export default function GalleryPage() {
           )}
 
           {/* Load More Button */}
-          {visibleCount < filteredItems.length && (
+          {activeCategory !== "Video" && visibleCount < filteredItems.length && (
             <div className="mt-12 text-center">
               <Button
                 onClick={handleLoadMore}
@@ -293,7 +333,7 @@ export default function GalleryPage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. PRE-FOOTER BANNER WITH 4 FEATURE ICONS                                  */}
+      {/* 5. PRE-FOOTER BANNER WITH 4 FEATURE ICONS                                  */}
       {/* ========================================================================= */}
       <section className="py-12 bg-[#061224] text-white border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -363,6 +403,24 @@ export default function GalleryPage() {
         >
           <div className="relative max-w-4xl w-full h-[80vh] rounded-2xl overflow-hidden border border-slate-700 shadow-2xl">
             <Image src={selectedImage} alt="Gallery Full View" fill className="object-contain" />
+          </div>
+        </div>
+      )}
+
+      {isVideoOpen && (
+        <div
+          onClick={() => setIsVideoOpen(false)}
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 cursor-pointer"
+        >
+          <div className="relative w-full max-w-5xl rounded-2xl overflow-hidden border border-slate-700 shadow-2xl bg-black" onClick={(e) => e.stopPropagation()}>
+            <video
+              controls
+              autoPlay
+              className="w-full h-[70vh] object-cover"
+              poster="/images/modern_interior.png"
+            >
+              <source src="/images/Gallery/Residentialvideo.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       )}

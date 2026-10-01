@@ -394,6 +394,9 @@ export const servicesData: ServiceDetail[] = [
       "/images/Gallery/Landscape (1).jpeg",
       "/images/Gallery/Landscape (2).jpg",
       "/images/Gallery/Landscape (1).jpg",
+      "/images/Gallery/landscape_232.jpeg",
+      "/images/Gallery/landscape_231.jpeg",
+
     ],
   },
 ];
