@@ -7,11 +7,11 @@ import { FacebookIcon, InstagramIcon } from "@/components/ui/social-icons";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#031c2d] text-slate-200">
-      <div className="max-w-[480px] mx-auto px-4 pt-4 pb-8 sm:max-w-7xl sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between pb-4">
-          <Link href="/" className="flex items-center group">
-            <div className="relative h-10 w-[180px] sm:h-14 sm:w-[220px] lg:w-[240px] transition-transform group-hover:scale-[1.02]">
+    <footer className="bg-[#061224] text-slate-200">
+      <div className="mx-auto max-w-[480px] px-4 pb-8 pt-5 sm:max-w-7xl sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-4 pb-4">
+          <Link href="/" className="flex items-center">
+            <div className="relative h-10 w-[170px] sm:h-14 sm:w-[220px] lg:w-[230px]">
               <Image
                 src="/logo.webp"
                 alt="M Design Studio Logo"
@@ -23,18 +23,18 @@ export default function Footer() {
 
           <button
             aria-label="Open menu"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-600 bg-slate-900/50 text-slate-200"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 bg-slate-800/80 text-slate-200"
           >
             <Menu className="h-4 w-4" />
           </button>
         </div>
 
-        <div className="flex items-center justify-between gap-3 pb-6 sm:pb-8">
+        <div className="flex items-center gap-3 pb-5">
           <a
             href="https://facebook.com"
             target="_blank"
             rel="noreferrer"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-600 bg-[#0b2235] text-slate-100 transition-colors hover:bg-[#D9531E]"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-[#0b2235] text-slate-100 transition-colors hover:bg-[#D9531E]"
             aria-label="Facebook"
           >
             <FacebookIcon className="h-4 w-4" />
@@ -44,7 +44,7 @@ export default function Footer() {
             href="https://instagram.com"
             target="_blank"
             rel="noreferrer"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-600 bg-[#0b2235] text-slate-100 transition-colors hover:bg-[#D9531E]"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-[#0b2235] text-slate-100 transition-colors hover:bg-[#D9531E]"
             aria-label="Instagram"
           >
             <InstagramIcon className="h-4 w-4" />
@@ -52,19 +52,19 @@ export default function Footer() {
 
           <a
             href="mailto:mdesignstudio626@gmail.com"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-600 bg-[#0b2235] text-slate-100 transition-colors hover:bg-[#D9531E]"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-[#0b2235] text-slate-100 transition-colors hover:bg-[#D9531E]"
             aria-label="Email"
           >
             <Mail className="h-4 w-4" />
           </a>
         </div>
 
-        <div className="space-y-8 border-t border-slate-700/80 pt-6">
+        <div className="space-y-7 border-t border-slate-700/70 pt-6">
           <div>
-            <h3 className="mb-4 inline-block border-b border-[#D9531E]/80 pb-1 text-lg font-black uppercase tracking-wide text-white">
+            <h3 className="mb-3 inline-block border-b border-[#D9531E]/80 pb-1 text-base font-black uppercase tracking-wide text-white">
               Quick Links
             </h3>
-            <ul className="space-y-3 text-base font-medium text-slate-200">
+            <ul className="space-y-2 text-base font-medium text-slate-200">
               <li><Link href="/" className="transition-colors hover:text-[#D9531E]">Home</Link></li>
               <li><Link href="/about" className="transition-colors hover:text-[#D9531E]">About Us</Link></li>
               <li><Link href="/services" className="transition-colors hover:text-[#D9531E]">Services</Link></li>
@@ -76,10 +76,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 inline-block border-b border-[#D9531E]/80 pb-1 text-lg font-black uppercase tracking-wide text-white">
+            <h3 className="mb-3 inline-block border-b border-[#D9531E]/80 pb-1 text-base font-black uppercase tracking-wide text-white">
               Our Services
             </h3>
-            <ul className="space-y-3 text-base font-medium text-slate-200">
+            <ul className="space-y-2 text-base font-medium text-slate-200">
               <li><Link href="/services#architectural" className="transition-colors hover:text-[#D9531E]">Architectural Design</Link></li>
               <li><Link href="/services#interior" className="transition-colors hover:text-[#D9531E]">Interior Design</Link></li>
               <li><Link href="/services#structural" className="transition-colors hover:text-[#D9531E]">Structural Design</Link></li>
@@ -91,10 +91,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 inline-block border-b border-[#D9531E]/80 pb-1 text-lg font-black uppercase tracking-wide text-white">
+            <h3 className="mb-3 inline-block border-b border-[#D9531E]/80 pb-1 text-base font-black uppercase tracking-wide text-white">
               Our Branches
             </h3>
-            <ul className="space-y-4 text-base font-medium text-slate-200">
+            <ul className="space-y-3 text-base font-medium text-slate-200">
               <li className="flex items-center gap-3">
                 <MapPin className="h-4 w-4 shrink-0 text-[#D9531E]" />
                 <span>Patna, Bihar</span>
@@ -119,11 +119,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 inline-block border-b border-[#D9531E]/80 pb-1 text-lg font-black uppercase tracking-wide text-white">
+            <h3 className="mb-3 inline-block border-b border-[#D9531E]/80 pb-1 text-base font-black uppercase tracking-wide text-white">
               Get In Touch
             </h3>
 
-            <div className="space-y-4 text-base text-slate-200">
+            <div className="space-y-3 text-base text-slate-200">
               <div className="flex items-start gap-3">
                 <MapPin className="mt-1 h-4 w-4 shrink-0 text-[#D9531E]" />
                 <p className="leading-relaxed">Lakho Binda Campus Near Santu nagar chowk, Madhubani Bihar-847211</p>
@@ -142,10 +142,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-slate-700/80 pt-5 text-center text-xs text-slate-400 sm:flex-row sm:text-left">
+        <div className="mt-8 flex flex-col items-center justify-center gap-2 border-t border-slate-700/70 pt-4 text-center text-xs text-slate-400">
           <p>© 2024 M Design Studio. All Rights Reserved.</p>
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+          <div className="flex items-center justify-center gap-4">
             <Link href="/privacy" className="transition-colors hover:text-slate-200">Privacy Policy</Link>
+            <span className="text-slate-600">|</span>
             <Link href="/terms" className="transition-colors hover:text-slate-200">Terms & Conditions</Link>
           </div>
         </div>
