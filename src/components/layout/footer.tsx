@@ -29,33 +29,33 @@ export default function Footer() {
           </button>
         </div>
 
-        <div className="flex items-center gap-3 pb-5">
+        <div className="flex items-center gap-4 pb-5">
           <a
             href="https://facebook.com"
             target="_blank"
             rel="noreferrer"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-[#0b2235] text-slate-100 transition-colors hover:bg-[#D9531E]"
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-600 bg-[#0b2235] text-slate-100 transition-colors hover:bg-[#D9531E]"
             aria-label="Facebook"
           >
-            <FacebookIcon className="h-4 w-4" />
+            <FacebookIcon className="h-5 w-5" />
           </a>
 
           <a
             href="https://instagram.com"
             target="_blank"
             rel="noreferrer"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-[#0b2235] text-slate-100 transition-colors hover:bg-[#D9531E]"
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-600 bg-[#0b2235] text-slate-100 transition-colors hover:bg-[#D9531E]"
             aria-label="Instagram"
           >
-            <InstagramIcon className="h-4 w-4" />
+            <InstagramIcon className="h-5 w-5" />
           </a>
 
           <a
             href="mailto:mdesignstudio626@gmail.com"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-[#0b2235] text-slate-100 transition-colors hover:bg-[#D9531E]"
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-600 bg-[#0b2235] text-slate-100 transition-colors hover:bg-[#D9531E]"
             aria-label="Email"
           >
-            <Mail className="h-4 w-4" />
+            <Mail className="h-5 w-5" />
           </a>
         </div>
 
