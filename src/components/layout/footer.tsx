@@ -2,181 +2,153 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Menu } from "lucide-react";
 import { FacebookIcon, InstagramIcon } from "@/components/ui/social-icons";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#061224] text-slate-300 border-t border-slate-800 pt-10 sm:pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-8 lg:gap-10 pb-8 sm:pb-12 border-b border-slate-800/80">
-          
-          {/* Col 1: About & Social */}
-          <div className="lg:col-span-1 space-y-4">
-            <Link href="/" className="flex items-center group w-fit max-w-full">
-              <div className="relative h-16 sm:h-20 w-[220px] sm:w-[260px] lg:w-[220px] transition-transform group-hover:scale-105">
-                <Image
-                  src="/logo.webp"
-                  alt="M Design Studio Logo"
-                  fill
-                  className="object-contain object-left"
-                />
-              </div>
-            </Link>
-            
-            <p className="text-xs text-slate-400 leading-relaxed">
-              We design and build spaces that inspire, innovate and stand the test of time. Empaneled architect for Patna & Madhubani Municipal Corporations.
-            </p>
-
-            <div className="flex items-center gap-4 pt-2">
-              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-slate-800 hover:bg-[#D9531E] flex items-center justify-center text-slate-300 hover:text-white transition-colors" aria-label="Facebook">
-                <FacebookIcon className="w-4 h-4" />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-slate-800 hover:bg-[#D9531E] flex items-center justify-center text-slate-300 hover:text-white transition-colors" aria-label="Instagram">
-                <InstagramIcon className="w-4 h-4" />
-              </a>
-              
-              
-              <a href="mailto:mdesignstudio626@gmail.com" className="w-8 h-8 rounded-full bg-slate-800 hover:bg-[#D9531E] flex items-center justify-center text-slate-300 hover:text-white transition-colors" aria-label="Email">
-                <Mail className="w-4 h-4" />
-              </a>
+    <footer className="bg-[#031c2d] text-slate-200">
+      <div className="max-w-[480px] mx-auto px-4 pt-4 pb-8 sm:max-w-7xl sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between pb-4">
+          <Link href="/" className="flex items-center group">
+            <div className="relative h-10 w-[180px] sm:h-14 sm:w-[220px] lg:w-[240px] transition-transform group-hover:scale-[1.02]">
+              <Image
+                src="/logo.webp"
+                alt="M Design Studio Logo"
+                fill
+                className="object-contain object-left"
+              />
             </div>
-          </div>
+          </Link>
 
-          {/* Col 2: Quick Links */}
+          <button
+            aria-label="Open menu"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-600 bg-slate-900/50 text-slate-200"
+          >
+            <Menu className="h-4 w-4" />
+          </button>
+        </div>
+
+        <div className="flex items-center justify-between gap-3 pb-6 sm:pb-8">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noreferrer"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-600 bg-[#0b2235] text-slate-100 transition-colors hover:bg-[#D9531E]"
+            aria-label="Facebook"
+          >
+            <FacebookIcon className="h-4 w-4" />
+          </a>
+
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noreferrer"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-600 bg-[#0b2235] text-slate-100 transition-colors hover:bg-[#D9531E]"
+            aria-label="Instagram"
+          >
+            <InstagramIcon className="h-4 w-4" />
+          </a>
+
+          <a
+            href="mailto:mdesignstudio626@gmail.com"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-600 bg-[#0b2235] text-slate-100 transition-colors hover:bg-[#D9531E]"
+            aria-label="Email"
+          >
+            <Mail className="h-4 w-4" />
+          </a>
+        </div>
+
+        <div className="space-y-8 border-t border-slate-700/80 pt-6">
           <div>
-            <h3 className="text-white font-bold text-sm mb-4 uppercase tracking-wider border-b border-[#D9531E]/40 pb-1.5 inline-block">
+            <h3 className="mb-4 inline-block border-b border-[#D9531E]/80 pb-1 text-lg font-black uppercase tracking-wide text-white">
               Quick Links
             </h3>
-            <ul className="space-y-2 text-xs">
-              <li>
-                <Link href="/" className="hover:text-[#D9531E] transition-colors">Home</Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-[#D9531E] transition-colors">About Us</Link>
-              </li>
-              <li>
-                <Link href="/services" className="hover:text-[#D9531E] transition-colors">Services</Link>
-              </li>
-              <li>
-                <Link href="/projects" className="hover:text-[#D9531E] transition-colors">Projects</Link>
-              </li>
-              <li>
-                <Link href="/gallery" className="hover:text-[#D9531E] transition-colors">Gallery</Link>
-              </li>
-              <li>
-                <Link href="/blog" className="hover:text-[#D9531E] transition-colors">Blog</Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-[#D9531E] transition-colors">Contact</Link>
-              </li>
+            <ul className="space-y-3 text-base font-medium text-slate-200">
+              <li><Link href="/" className="transition-colors hover:text-[#D9531E]">Home</Link></li>
+              <li><Link href="/about" className="transition-colors hover:text-[#D9531E]">About Us</Link></li>
+              <li><Link href="/services" className="transition-colors hover:text-[#D9531E]">Services</Link></li>
+              <li><Link href="/projects" className="transition-colors hover:text-[#D9531E]">Projects</Link></li>
+              <li><Link href="/gallery" className="transition-colors hover:text-[#D9531E]">Gallery</Link></li>
+              <li><Link href="/blog" className="transition-colors hover:text-[#D9531E]">Blog</Link></li>
+              <li><Link href="/contact" className="transition-colors hover:text-[#D9531E]">Contact</Link></li>
             </ul>
           </div>
 
-          {/* Col 3: Our Services */}
           <div>
-            <h3 className="text-white font-bold text-sm mb-4 uppercase tracking-wider border-b border-[#D9531E]/40 pb-1.5 inline-block">
+            <h3 className="mb-4 inline-block border-b border-[#D9531E]/80 pb-1 text-lg font-black uppercase tracking-wide text-white">
               Our Services
             </h3>
-            <ul className="space-y-2 text-xs">
-              <li>
-                <Link href="/services#architectural" className="hover:text-[#D9531E] transition-colors">Architectural Design</Link>
-              </li>
-              <li>
-                <Link href="/services#interior" className="hover:text-[#D9531E] transition-colors">Interior Design</Link>
-              </li>
-              <li>
-                <Link href="/services#structural" className="hover:text-[#D9531E] transition-colors">Structural Design</Link>
-              </li>
-              <li>
-                <Link href="/services#vastu" className="hover:text-[#D9531E] transition-colors">Vastu Consulting</Link>
-              </li>
-              <li>
-                <Link href="/services#3d-visualization" className="hover:text-[#D9531E] transition-colors">3D Visualisation</Link>
-              </li>
-              <li>
-                <Link href="/services#site-mgmt" className="hover:text-[#D9531E] transition-colors">Site Management</Link>
-              </li>
-              <li>
-                <Link href="/services#drawing-approval" className="hover:text-[#D9531E] transition-colors">Drawing Approval</Link>
-              </li>
+            <ul className="space-y-3 text-base font-medium text-slate-200">
+              <li><Link href="/services#architectural" className="transition-colors hover:text-[#D9531E]">Architectural Design</Link></li>
+              <li><Link href="/services#interior" className="transition-colors hover:text-[#D9531E]">Interior Design</Link></li>
+              <li><Link href="/services#structural" className="transition-colors hover:text-[#D9531E]">Structural Design</Link></li>
+              <li><Link href="/services#vastu" className="transition-colors hover:text-[#D9531E]">Vastu Consulting</Link></li>
+              <li><Link href="/services#3d-visualization" className="transition-colors hover:text-[#D9531E]">3D Visualisation</Link></li>
+              <li><Link href="/services#site-mgmt" className="transition-colors hover:text-[#D9531E]">Site Management</Link></li>
+              <li><Link href="/services#drawing-approval" className="transition-colors hover:text-[#D9531E]">Drawing Approval</Link></li>
             </ul>
           </div>
 
-          {/* Col 4: Our Branches */}
           <div>
-            <h3 className="text-white font-bold text-sm mb-4 uppercase tracking-wider border-b border-[#D9531E]/40 pb-1.5 inline-block">
+            <h3 className="mb-4 inline-block border-b border-[#D9531E]/80 pb-1 text-lg font-black uppercase tracking-wide text-white">
               Our Branches
             </h3>
-            <ul className="space-y-2.5 text-xs text-slate-300">
-              <li className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#D9531E]" />
+            <ul className="space-y-4 text-base font-medium text-slate-200">
+              <li className="flex items-center gap-3">
+                <MapPin className="h-4 w-4 shrink-0 text-[#D9531E]" />
                 <span>Patna, Bihar</span>
               </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#D9531E]" />
+              <li className="flex items-center gap-3">
+                <MapPin className="h-4 w-4 shrink-0 text-[#D9531E]" />
                 <span>Darbhanga, Bihar</span>
               </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#D9531E]" />
+              <li className="flex items-center gap-3">
+                <MapPin className="h-4 w-4 shrink-0 text-[#D9531E]" />
                 <span>Madhubani, Bihar</span>
               </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#D9531E]" />
+              <li className="flex items-center gap-3">
+                <MapPin className="h-4 w-4 shrink-0 text-[#D9531E]" />
                 <span>Khajauli, Bihar</span>
               </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#D9531E]" />
+              <li className="flex items-center gap-3">
+                <MapPin className="h-4 w-4 shrink-0 text-[#D9531E]" />
                 <span>Rajnagar (Bihar)</span>
               </li>
             </ul>
           </div>
 
-          {/* Col 5: Get In Touch */}
-          <div className="space-y-3">
-            <h3 className="text-white font-bold text-sm mb-4 uppercase tracking-wider border-b border-[#D9531E]/40 pb-1.5 inline-block">
+          <div>
+            <h3 className="mb-4 inline-block border-b border-[#D9531E]/80 pb-1 text-lg font-black uppercase tracking-wide text-white">
               Get In Touch
             </h3>
 
-            <div className="flex items-start gap-2.5 text-xs">
-              <MapPin className="w-4 h-4 text-[#D9531E] shrink-0 mt-0.5" />
-              <div>
-               
-                <p className="text-slate-400">Lakho Binda Campus
-Near Santu nagar chowk, Madhubani 
-Bihar-847211</p>
+            <div className="space-y-4 text-base text-slate-200">
+              <div className="flex items-start gap-3">
+                <MapPin className="mt-1 h-4 w-4 shrink-0 text-[#D9531E]" />
+                <p className="leading-relaxed">Lakho Binda Campus Near Santu nagar chowk, Madhubani Bihar-847211</p>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Phone className="h-4 w-4 shrink-0 text-[#D9531E]" />
+                <a href="tel:+917011733185" className="transition-colors hover:text-white">+91 85870 08925, 70117 33185</a>
+              </div>
+
+              <div className="flex items-center gap-3 break-all">
+                <Mail className="h-4 w-4 shrink-0 text-[#D9531E]" />
+                <a href="mailto:ar.mahesh118@gmail.com" className="transition-colors hover:text-white">ar.mahesh118@gmail.com</a>
               </div>
             </div>
-
-            <div className="flex items-center gap-2.5 text-xs">
-              <Phone className="w-4 h-4 text-[#D9531E] shrink-0" />
-              <a href="tel:+917011733185" className="hover:text-white transition-colors">
-                +91 85870 08925, 70117 33185
-              </a>
-            </div>
-
-            <div className="flex items-center gap-2.5 text-xs">
-              <Mail className="w-4 h-4 text-[#D9531E] shrink-0" />
-              <a href="mailto:ar.mahesh118@gmail.com" className="hover:text-white transition-colors break-all">
-                ar.mahesh118@gmail.com
-              </a>
-            </div>
           </div>
-
         </div>
 
-        {/* Bottom Copyright & Legal */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left text-xs text-slate-500 gap-3 sm:gap-4">
+        <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-slate-700/80 pt-5 text-center text-xs text-slate-400 sm:flex-row sm:text-left">
           <p>© 2024 M Design Studio. All Rights Reserved.</p>
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-6">
-            <Link href="/privacy" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>
-            <span className="text-slate-700 hidden sm:inline">|</span>
-            <Link href="/terms" className="hover:text-slate-300 transition-colors">Terms & Conditions</Link>
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            <Link href="/privacy" className="transition-colors hover:text-slate-200">Privacy Policy</Link>
+            <Link href="/terms" className="transition-colors hover:text-slate-200">Terms & Conditions</Link>
           </div>
         </div>
-
       </div>
     </footer>
   );
