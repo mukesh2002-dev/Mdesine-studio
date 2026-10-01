@@ -2,155 +2,238 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Mail, Menu } from "lucide-react";
-import { FacebookIcon, InstagramIcon } from "@/components/ui/social-icons";
+import { 
+  MapPin, 
+  Phone, 
+  Mail, 
+  ChevronRight, 
+  Award, 
+  Clock, 
+  Building2,
+  ExternalLink
+} from "lucide-react";
+import { 
+  FacebookIcon, 
+  InstagramIcon, 
+  LinkedinIcon, 
+  YoutubeIcon 
+} from "@/components/ui/social-icons";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#061224] text-slate-200">
-      <div className="mx-auto max-w-[480px] px-4 pb-8 pt-5 sm:max-w-7xl sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-4 pb-4">
-          <Link href="/" className="flex items-center">
-            <div className="relative h-10 w-[170px] sm:h-14 sm:w-[220px] lg:w-[230px]">
-              <Image
-                src="/logo.webp"
-                alt="M Design Studio Logo"
-                fill
-                className="object-contain object-left"
-              />
+    <footer className="bg-[#061224] text-slate-200 border-t border-slate-800/80 relative overflow-hidden">
+      {/* Background Subtle Ambient Glow */}
+      <div 
+        className="pointer-events-none absolute -top-40 -left-40 h-96 w-96 rounded-full bg-[#D9531E]/5 blur-3xl" 
+        aria-hidden="true" 
+      />
+      <div 
+        className="pointer-events-none absolute -bottom-40 -right-40 h-96 w-96 rounded-full bg-blue-600/5 blur-3xl" 
+        aria-hidden="true" 
+      />
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 lg:pt-16 pb-8 relative z-10">
+        
+        {/* Main Footer Grid Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 pb-12 border-b border-slate-800/80">
+          
+          {/* Column 1: Brand Profile & Overview (Desktop: 4 cols) */}
+          <div className="sm:col-span-2 lg:col-span-4 space-y-5">
+            <Link href="/" className="inline-block group focus:outline-none focus:ring-2 focus:ring-[#D9531E] rounded-lg">
+              <div className="relative h-12 w-52 sm:h-14 sm:w-60 lg:h-16 lg:w-64 transition-transform group-hover:scale-105">
+                <Image
+                  src="/logo.svg"
+                  alt="M Design Studio Logo"
+                  fill
+                  className="object-contain object-left"
+                />
+              </div>
+            </Link>
+
+            <p className="text-sm leading-relaxed text-slate-300 max-w-md">
+              Official Empaneled Architect of Patna & Madhubani Municipal Corporation. 
+              Delivering innovative, sustainable, and functional Architectural & Interior Design 
+              solutions across Bihar.
+            </p>
+
+            {/* Empaneled Badge */}
+            <div className="inline-flex items-center gap-2.5 rounded-lg border border-[#D9531E]/30 bg-[#D9531E]/10 px-3.5 py-2 text-xs font-semibold text-[#D9531E] backdrop-blur-sm">
+              <Award className="h-4 w-4 shrink-0" />
+              <span>Empaneled Architect • Govt. Certified</span>
             </div>
-          </Link>
 
-          <button
-            aria-label="Open menu"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 bg-slate-800/80 text-slate-200"
-          >
-            <Menu className="h-4 w-4" />
-          </button>
-        </div>
+            {/* Social Media Links */}
+            <div className="pt-2">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Follow Us</h4>
+              <div className="flex items-center gap-2.5">
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-900/80 text-slate-300 transition-all duration-300 hover:border-[#D9531E] hover:bg-[#D9531E] hover:text-white hover:scale-110 shadow-sm"
+                >
+                  <FacebookIcon className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-900/80 text-slate-300 transition-all duration-300 hover:border-[#D9531E] hover:bg-[#D9531E] hover:text-white hover:scale-110 shadow-sm"
+                >
+                  <InstagramIcon className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-900/80 text-slate-300 transition-all duration-300 hover:border-[#D9531E] hover:bg-[#D9531E] hover:text-white hover:scale-110 shadow-sm"
+                >
+                  <LinkedinIcon className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-900/80 text-slate-300 transition-all duration-300 hover:border-[#D9531E] hover:bg-[#D9531E] hover:text-white hover:scale-110 shadow-sm"
+                >
+                  <YoutubeIcon className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </div>
 
-        <div className="flex items-center gap-4 pb-5">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noreferrer"
-            className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-600 bg-[#0b2235] text-slate-100 transition-colors hover:bg-[#D9531E]"
-            aria-label="Facebook"
-          >
-            <FacebookIcon className="h-5 w-5" />
-          </a>
-
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noreferrer"
-            className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-600 bg-[#0b2235] text-slate-100 transition-colors hover:bg-[#D9531E]"
-            aria-label="Instagram"
-          >
-            <InstagramIcon className="h-5 w-5" />
-          </a>
-
-          <a
-            href="mailto:mdesignstudio626@gmail.com"
-            className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-600 bg-[#0b2235] text-slate-100 transition-colors hover:bg-[#D9531E]"
-            aria-label="Email"
-          >
-            <Mail className="h-5 w-5" />
-          </a>
-        </div>
-
-        <div className="space-y-7 border-t border-slate-700/70 pt-6">
-          <div>
-            <h3 className="mb-3 inline-block border-b border-[#D9531E]/80 pb-1 text-base font-black uppercase tracking-wide text-white">
+          {/* Column 2: Quick Links (Desktop: 2 cols) */}
+          <div className="sm:col-span-1 lg:col-span-2 space-y-4">
+            <h3 className="relative inline-block text-base font-bold uppercase tracking-wider text-white pb-1.5 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-8 after:bg-[#D9531E]">
               Quick Links
             </h3>
-            <ul className="space-y-2 text-base font-medium text-slate-200">
-              <li><Link href="/" className="transition-colors hover:text-[#D9531E]">Home</Link></li>
-              <li><Link href="/about" className="transition-colors hover:text-[#D9531E]">About Us</Link></li>
-              <li><Link href="/services" className="transition-colors hover:text-[#D9531E]">Services</Link></li>
-              <li><Link href="/projects" className="transition-colors hover:text-[#D9531E]">Projects</Link></li>
-              <li><Link href="/gallery" className="transition-colors hover:text-[#D9531E]">Gallery</Link></li>
-              <li><Link href="/blog" className="transition-colors hover:text-[#D9531E]">Blog</Link></li>
-              <li><Link href="/contact" className="transition-colors hover:text-[#D9531E]">Contact</Link></li>
+            <ul className="space-y-2.5 text-sm font-medium text-slate-300">
+              {[
+                { href: "/", label: "Home" },
+                { href: "/about", label: "About Us" },
+                { href: "/services", label: "Services" },
+                { href: "/projects", label: "Projects" },
+                { href: "/gallery", label: "Gallery" },
+                { href: "/blog", label: "Blog" },
+                { href: "/contact", label: "Contact Us" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href}
+                    className="group inline-flex items-center gap-1.5 transition-colors hover:text-[#D9531E]"
+                  >
+                    <ChevronRight className="h-3.5 w-3.5 text-slate-500 transition-transform group-hover:translate-x-1 group-hover:text-[#D9531E]" />
+                    <span>{link.label}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div>
-            <h3 className="mb-3 inline-block border-b border-[#D9531E]/80 pb-1 text-base font-black uppercase tracking-wide text-white">
+          {/* Column 3: Our Services (Desktop: 3 cols) */}
+          <div className="sm:col-span-1 lg:col-span-3 space-y-4">
+            <h3 className="relative inline-block text-base font-bold uppercase tracking-wider text-white pb-1.5 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-8 after:bg-[#D9531E]">
               Our Services
             </h3>
-            <ul className="space-y-2 text-base font-medium text-slate-200">
-              <li><Link href="/services#architectural" className="transition-colors hover:text-[#D9531E]">Architectural Design</Link></li>
-              <li><Link href="/services#interior" className="transition-colors hover:text-[#D9531E]">Interior Design</Link></li>
-              <li><Link href="/services#structural" className="transition-colors hover:text-[#D9531E]">Structural Design</Link></li>
-              <li><Link href="/services#vastu" className="transition-colors hover:text-[#D9531E]">Vastu Consulting</Link></li>
-              <li><Link href="/services#3d-visualization" className="transition-colors hover:text-[#D9531E]">3D Visualisation</Link></li>
-              <li><Link href="/services#site-mgmt" className="transition-colors hover:text-[#D9531E]">Site Management</Link></li>
-              <li><Link href="/services#drawing-approval" className="transition-colors hover:text-[#D9531E]">Drawing Approval</Link></li>
+            <ul className="space-y-2.5 text-sm font-medium text-slate-300">
+              {[
+                { href: "/services#architectural", label: "Architectural Design" },
+                { href: "/services#interior", label: "Interior Design" },
+                { href: "/services#structural", label: "Structural Design" },
+                { href: "/services#vastu", label: "Vastu Consulting" },
+                { href: "/services#3d-visualization", label: "3D Visualisation" },
+                { href: "/services#estimation", label: "Estimation & Costing" },
+                { href: "/services#site-mgmt", label: "Site Management" },
+                { href: "/services#drawing-approval", label: "Drawing Approval" },
+              ].map((service) => (
+                <li key={service.href}>
+                  <Link 
+                    href={service.href}
+                    className="group inline-flex items-center gap-1.5 transition-colors hover:text-[#D9531E]"
+                  >
+                    <ChevronRight className="h-3.5 w-3.5 text-slate-500 transition-transform group-hover:translate-x-1 group-hover:text-[#D9531E]" />
+                    <span>{service.label}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div>
-            <h3 className="mb-3 inline-block border-b border-[#D9531E]/80 pb-1 text-base font-black uppercase tracking-wide text-white">
-              Our Branches
-            </h3>
-            <ul className="space-y-3 text-base font-medium text-slate-200">
-              <li className="flex items-center gap-3">
-                <MapPin className="h-4 w-4 shrink-0 text-[#D9531E]" />
-                <span>Patna, Bihar</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <MapPin className="h-4 w-4 shrink-0 text-[#D9531E]" />
-                <span>Darbhanga, Bihar</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <MapPin className="h-4 w-4 shrink-0 text-[#D9531E]" />
-                <span>Madhubani, Bihar</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <MapPin className="h-4 w-4 shrink-0 text-[#D9531E]" />
-                <span>Khajauli, Bihar</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <MapPin className="h-4 w-4 shrink-0 text-[#D9531E]" />
-                <span>Rajnagar (Bihar)</span>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-3 inline-block border-b border-[#D9531E]/80 pb-1 text-base font-black uppercase tracking-wide text-white">
+          {/* Column 4: Get In Touch & Branches (Desktop: 3 cols) */}
+          <div className="sm:col-span-2 lg:col-span-3 space-y-5">
+            <h3 className="relative inline-block text-base font-bold uppercase tracking-wider text-white pb-1.5 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-8 after:bg-[#D9531E]">
               Get In Touch
             </h3>
 
-            <div className="space-y-3 text-base text-slate-200">
-              <div className="flex items-start gap-3">
-                <MapPin className="mt-1 h-4 w-4 shrink-0 text-[#D9531E]" />
-                <p className="leading-relaxed">Lakho Binda Campus Near Santu nagar chowk, Madhubani Bihar-847211</p>
+            <div className="space-y-3.5 text-sm text-slate-300">
+              {/* Address */}
+              <div className="flex items-start gap-3 group">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-slate-800 bg-slate-900/60 text-[#D9531E] group-hover:border-[#D9531E]/40 group-hover:bg-[#D9531E]/10 transition-colors">
+                  <MapPin className="h-4 w-4" />
+                </div>
+                <p className="leading-relaxed text-xs sm:text-sm pt-0.5">
+                  Lakho Binda Campus Near Santu nagar chowk, Madhubani, Bihar - 847211
+                </p>
               </div>
 
-              <div className="flex items-center gap-3">
-                <Phone className="h-4 w-4 shrink-0 text-[#D9531E]" />
-                <a href="tel:+917011733185" className="transition-colors hover:text-white">+91 85870 08925, 70117 33185</a>
+              {/* Phone */}
+              <div className="flex items-center gap-3 group">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-slate-800 bg-slate-900/60 text-[#D9531E] group-hover:border-[#D9531E]/40 group-hover:bg-[#D9531E]/10 transition-colors">
+                  <Phone className="h-4 w-4" />
+                </div>
+                <div className="flex flex-wrap items-center gap-x-2 text-xs sm:text-sm">
+                  <a href="tel:+918587008925" className="transition-colors hover:text-white hover:underline">
+                    +91 85870 08925
+                  </a>
+                  <span className="text-slate-600">|</span>
+                  <a href="tel:+917011733185" className="transition-colors hover:text-white hover:underline">
+                    +91 70117 33185
+                  </a>
+                </div>
               </div>
 
-              <div className="flex items-center gap-3 break-all">
-                <Mail className="h-4 w-4 shrink-0 text-[#D9531E]" />
-                <a href="mailto:ar.mahesh118@gmail.com" className="transition-colors hover:text-white">ar.mahesh118@gmail.com</a>
+              {/* Email */}
+              <div className="flex items-center gap-3 group">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-slate-800 bg-slate-900/60 text-[#D9531E] group-hover:border-[#D9531E]/40 group-hover:bg-[#D9531E]/10 transition-colors">
+                  <Mail className="h-4 w-4" />
+                </div>
+                <a 
+                  href="mailto:ar.mahesh118@gmail.com" 
+                  className="text-xs sm:text-sm transition-colors hover:text-white hover:underline break-all"
+                >
+                  ar.mahesh118@gmail.com
+                </a>
               </div>
             </div>
+
+            
+          </div>
+
+        </div>
+
+        {/* Bottom Section: Copyright & Legal */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs text-slate-400">
+          <p>© {new Date().getFullYear()} M Design Studio. All Rights Reserved.</p>
+          
+          <div className="flex items-center justify-center gap-4 text-xs">
+            <Link href="/privacy" className="transition-colors hover:text-slate-200">
+              Privacy Policy
+            </Link>
+            <span className="text-slate-700">•</span>
+            <Link href="/terms" className="transition-colors hover:text-slate-200">
+              Terms & Conditions
+            </Link>
+            <span className="text-slate-700">•</span>
+            
           </div>
         </div>
 
-        <div className="mt-8 flex flex-col items-center justify-center gap-2 border-t border-slate-700/70 pt-4 text-center text-xs text-slate-400">
-          <p>© 2024 M Design Studio. All Rights Reserved.</p>
-          <div className="flex items-center justify-center gap-4">
-            <Link href="/privacy" className="transition-colors hover:text-slate-200">Privacy Policy</Link>
-            <span className="text-slate-600">|</span>
-            <Link href="/terms" className="transition-colors hover:text-slate-200">Terms & Conditions</Link>
-          </div>
-        </div>
       </div>
     </footer>
   );
 }
+
