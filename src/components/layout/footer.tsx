@@ -7,18 +7,18 @@ import { FacebookIcon, InstagramIcon } from "@/components/ui/social-icons";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#061224] text-slate-300 border-t border-slate-800 pt-16 pb-8">
+    <footer className="bg-[#061224] text-slate-300 border-t border-slate-800 pt-10 sm:pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800/80">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-8 lg:gap-10 pb-8 sm:pb-12 border-b border-slate-800/80">
           
           {/* Col 1: About & Social */}
           <div className="lg:col-span-1 space-y-4">
-            <Link href="/" className="flex items-center group">
-              <div className="relative h-20 sm:h-24 w-[340px] sm:w-[480px] transition-transform group-hover:scale-105">
+            <Link href="/" className="flex items-center group w-fit max-w-full">
+              <div className="relative h-16 sm:h-20 w-[220px] sm:w-[260px] lg:w-[220px] transition-transform group-hover:scale-105">
                 <Image
-                  src="/logo.svg"
+                  src="/logo.webp"
                   alt="M Design Studio Logo"
                   fill
                   className="object-contain object-left"
@@ -168,11 +168,11 @@ Bihar-847211</p>
         </div>
 
         {/* Bottom Copyright & Legal */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left text-xs text-slate-500 gap-3 sm:gap-4">
           <p>© 2024 M Design Studio. All Rights Reserved.</p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-6">
             <Link href="/privacy" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>
-            <span className="text-slate-700">|</span>
+            <span className="text-slate-700 hidden sm:inline">|</span>
             <Link href="/terms" className="hover:text-slate-300 transition-colors">Terms & Conditions</Link>
           </div>
         </div>
