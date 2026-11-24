@@ -1,6 +1,6 @@
 "use client";
 
-import { Building2, Award, Star, Clock, CheckCircle2 } from "lucide-react";
+import { Building2, Award, Star, CheckCircle2 } from "lucide-react";
 
 export default function StatsCounter() {
   return (
@@ -33,13 +33,7 @@ export default function StatsCounter() {
               <div className="text-[10px] sm:text-xs font-semibold text-slate-500 uppercase tracking-wider leading-snug">Client Satisfaction</div>
             </div>
 
-            <div className="p-3 sm:p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-orange-200 transition-all">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-orange-100 text-[#D9531E] flex items-center justify-center mx-auto mb-2">
-                <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
-              </div>
-              <div className="text-xl sm:text-2xl md:text-3xl font-black text-[#061224]">24x7</div>
-              <div className="text-[10px] sm:text-xs font-semibold text-slate-500 uppercase tracking-wider leading-snug">Support Available</div>
-            </div>
+            
           </div>
         </div>
       </section>

@@ -14,7 +14,6 @@ import {
   Sparkles,
   Award,
   Users,
-  Trophy,
   RefreshCw,
   ArrowRight,
   ZoomIn,
@@ -86,19 +85,23 @@ export default function GalleryPage() {
     { id: 21, title: "Urban Residential Tower", cat: "Residential", img: "/images/Gallery/Residential19.jpeg" },
     { id: 22, title: "Grand Residential Mansion", cat: "Residential", img: "/images/Gallery/Residential20.jpeg" },
     { id: 23, title: "Contemporary Duplex Living Space", cat: "Residential", img: "/images/Gallery/Residential21.jpg" },
-    { id: 24, title: "Modern Commercial Plaza Complex", cat: "Commercial", img: "/images/Gallery/Commercial2.jpg" },
-    { id: 25, title: "Corporate Business Center Facade", cat: "Commercial", img: "/images/Gallery/Commercial3.jpeg" },
-    { id: 26, title: "Glass Facade Commercial Building", cat: "Commercial", img: "/images/Gallery/Commercial4.jpg" },
-    { id: 27, title: "Institutional Campus Main Block", cat: "Institutional", img: "/images/Gallery/Institutional.jpeg" },
-    { id: 28, title: "Educational Institute Architecture", cat: "Institutional", img: "/images/Gallery/Institutional4 (1).jpeg" },
-    { id: 29, title: "Academic & Administrative Building", cat: "Institutional", img: "/images/Gallery/Institutional4 (2).jpeg" },
-    { id: 30, title: "School & College Campus Structure", cat: "Institutional", img: "/images/Gallery/Institutional4 (3).jpeg" },
-    { id: 31, title: "Urban Landscape & Courtyard Garden", cat: "Landscape", img: "/images/Gallery/Landscape (1).jpeg" },
-    { id: 32, title: "Modern Villa Garden & Pathway", cat: "Landscape", img: "/images/Gallery/Landscape (1).jpg" },
-    { id: 33, title: "Architectural Exterior Landscaping", cat: "Landscape", img: "/images/Gallery/Landscape (2).jpg" },
-    { id: 34, title: "Luxury Living Room Interior", cat: "Interior", img: "/images/modern_interior.png" },
-    { id: 35, title: "Garden Landscape Detail", cat: "Landscape", img: "/images/Gallery/landscape_232.jpeg" },
-    { id: 36, title: "Outdoor Landscape View", cat: "Landscape", img: "/images/Gallery/landscape_231.jpeg" },
+    { id: 24, title: "Contemporary Duplex Living Space", cat: "Residential", img: "/images/Gallery/Residential22.webp" },
+    { id: 25, title: "Contemporary Duplex Living Space", cat: "Residential", img: "/images/Gallery/Residential23.webp" },
+
+
+    { id: 26, title: "Modern Commercial Plaza Complex", cat: "Commercial", img: "/images/Gallery/Commercial2.jpg" },
+    { id: 27, title: "Corporate Business Center Facade", cat: "Commercial", img: "/images/Gallery/Commercial3.jpeg" },
+    { id: 28, title: "Glass Facade Commercial Building", cat: "Commercial", img: "/images/Gallery/Commercial4.jpg" },
+    { id: 29, title: "Institutional Campus Main Block", cat: "Institutional", img: "/images/Gallery/Institutional.jpeg" },
+    { id: 30, title: "Educational Institute Architecture", cat: "Institutional", img: "/images/Gallery/Institutional4 (1).jpeg" },
+    { id: 31, title: "Academic & Administrative Building", cat: "Institutional", img: "/images/Gallery/Institutional4 (2).jpeg" },
+    { id: 32, title: "School & College Campus Structure", cat: "Institutional", img: "/images/Gallery/Institutional4 (3).jpeg" },
+    { id: 33, title: "Urban Landscape & Courtyard Garden", cat: "Landscape", img: "/images/Gallery/Landscape (1).jpeg" },
+    { id: 34, title: "Modern Villa Garden & Pathway", cat: "Landscape", img: "/images/Gallery/Landscape (1).jpg" },
+    { id: 35, title: "Architectural Exterior Landscaping", cat: "Landscape", img: "/images/Gallery/Landscape (2).jpg" },
+    { id: 36, title: "Luxury Living Room Interior", cat: "Interior", img: "/images/modern_interior.png" },
+    { id: 37, title: "Garden Landscape Detail", cat: "Landscape", img: "/images/Gallery/landscape_232.jpeg" },
+    { id: 38, title: "Outdoor Landscape View", cat: "Landscape", img: "/images/Gallery/landscape_231.jpeg" },
 
   ];
 
@@ -175,10 +178,7 @@ export default function GalleryPage() {
                 </div>
               </div>
 
-              <div className="bg-[#0B192C]/80 border border-slate-700/80 p-3 rounded-xl flex items-center gap-3">
-                <Trophy className="w-6 h-6 text-[#D9531E]" />
-                
-              </div>
+              
             </div>
 
           </div>
