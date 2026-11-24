@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Calendar, Phone, User, Mail, MapPin, Building, ArrowRight, CheckCircle2, X } from "lucide-react";
+import { Calendar, Phone, User, MapPin, Building, ArrowRight, CheckCircle2, X } from "lucide-react";
 
 interface ConsultationModalProps {
   isOpen: boolean;

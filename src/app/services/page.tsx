@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import type { LucideIcon } from "lucide-react";
 import {
   Building2,
   Palette,
@@ -15,14 +16,13 @@ import {
   CheckCircle2,
   Trees,
   ArrowRight,
-  Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ConsultationModal from "@/components/ui/consultation-modal";
 
 import { servicesData } from "@/data/services-data";
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, LucideIcon> = {
   Building2,
   Palette,
   Layers,
@@ -245,7 +245,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="text-2xl font-black">Have a Project in Mind?</h2>
-            <p className="text-xs text-slate-300 mt-1">Let's Design Something Amazing Together.</p>
+            <p className="text-xs text-slate-300 mt-1">Let&apos;s Design Something Amazing Together.</p>
           </div>
           <Button
             onClick={() => setIsModalOpen(true)}

@@ -8,9 +8,6 @@ import {
   Mail, 
   ChevronRight, 
   Award, 
-  Clock, 
-  Building2,
-  ExternalLink
 } from "lucide-react";
 import { 
   FacebookIcon, 
@@ -236,4 +233,3 @@ export default function Footer() {
     </footer>
   );
 }
-

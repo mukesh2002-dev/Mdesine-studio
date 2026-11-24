@@ -14,7 +14,6 @@ import {
   Sparkles,
   Building2,
   Home as HomeIcon,
-  Search,
   X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -24,7 +23,7 @@ export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All Projects");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [selectedProject, setSelectedProject] = useState<(typeof projectsData)[number] | null>(null);
   const [favorites, setFavorites] = useState<{ [key: number]: boolean }>({});
 
   const projectsData = [
@@ -360,7 +359,7 @@ export default function ProjectsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="text-2xl font-black">Have a Project in Mind?</h2>
-            <p className="text-xs text-slate-300 mt-1">Let's Build Something Amazing Together.</p>
+            <p className="text-xs text-slate-300 mt-1">Let&apos;s Build Something Amazing Together.</p>
           </div>
           <Button
             onClick={() => setIsModalOpen(true)}

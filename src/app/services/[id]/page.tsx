@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
+import type { LucideIcon } from "lucide-react";
 import {
   Building2,
   Palette,
@@ -28,9 +29,9 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ConsultationModal from "@/components/ui/consultation-modal";
-import { servicesData, ServiceDetail } from "@/data/services-data";
+import { servicesData } from "@/data/services-data";
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, LucideIcon> = {
   Building2,
   Palette,
   Layers,
@@ -45,7 +46,6 @@ const iconMap: Record<string, any> = {
 
 export default function ServiceDetailPage() {
   const params = useParams();
-  const router = useRouter();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [selectedPreviewImg, setSelectedPreviewImg] = useState<string | null>(null);

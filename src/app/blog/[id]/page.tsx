@@ -9,7 +9,6 @@ import {
   Clock,
   ArrowLeft,
   Share2,
-  Bookmark,
   CheckCircle2,
   Quote,
   User,
@@ -241,7 +240,7 @@ export default function BlogDetailPage() {
                 {sec.quote && (
                   <blockquote className="my-6 p-5 bg-orange-50/70 border-l-4 border-[#D9531E] rounded-r-xl relative italic text-slate-800 text-sm font-medium">
                     <Quote className="w-8 h-8 text-[#D9531E]/20 absolute right-4 bottom-2" />
-                    <p className="relative z-10">"{sec.quote}"</p>
+                    <p className="relative z-10">&quot;{sec.quote}&quot;</p>
                   </blockquote>
                 )}
 

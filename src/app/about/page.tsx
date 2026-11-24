@@ -4,18 +4,13 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Award,
   CheckCircle2,
-  Users,
   Target,
   Eye,
   Diamond,
   Play,
-  Mail,
   ArrowRight,
-  Sparkles,
 } from "lucide-react";
-import { FacebookIcon, LinkedinIcon } from "@/components/ui/social-icons";
 import { Button } from "@/components/ui/button";
 import ConsultationModal from "@/components/ui/consultation-modal";
 
@@ -335,11 +330,32 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {isVideoOpen && (
+        <div
+          onClick={() => setIsVideoOpen(false)}
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 cursor-pointer"
+        >
+          <div
+            className="relative w-full max-w-5xl rounded-2xl overflow-hidden border border-slate-700 shadow-2xl bg-black"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <video
+              controls
+              autoPlay
+              className="w-full h-[70vh] object-cover"
+              poster="/images/modern_interior.png"
+            >
+              <source src="/images/Gallery/Residentialvideo.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      )}
+
       {/* Pre-Footer Banner */}
       <section className="py-12 bg-[#061224] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <h2 className="text-2xl font-black">Have a Project in Mind?</h2>
-          <p className="text-xs text-slate-300">Let's work together to turn your ideas into reality.</p>
+          <p className="text-xs text-slate-300">Let&apos;s work together to turn your ideas into reality.</p>
           <Button
             onClick={() => setIsModalOpen(true)}
             className="bg-[#D9531E] hover:bg-[#C84C1C] text-white font-bold px-6 py-3 rounded-lg text-xs"

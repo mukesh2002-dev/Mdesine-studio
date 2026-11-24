@@ -131,7 +131,7 @@ export default function Home() {
           <div className="bg-[#0B192C] p-8 sm:p-12 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
             <div className="space-y-2 text-center md:text-left">
               <h2 className="text-2xl sm:text-3xl font-black text-white">
-                Let's Build Something Amazing Together
+                Let&apos;s Build Something Amazing Together
               </h2>
               <p className="text-slate-300 text-xs sm:text-sm max-w-xl">
                 Share your project idea with us and let our experts turn your dream into reality with creativity, precision and excellence.

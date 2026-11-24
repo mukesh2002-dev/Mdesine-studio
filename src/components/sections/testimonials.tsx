@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Star, ChevronLeft, ChevronRight, Quote, CheckCircle2, MapPin } from "lucide-react";
 
 export default function Testimonials() {
@@ -124,7 +123,7 @@ export default function Testimonials() {
 
             {/* Quote Text */}
             <p className="text-slate-200 text-base sm:text-xl font-medium leading-relaxed italic">
-              "{testimonials[activeIndex].quote}"
+              &quot;{testimonials[activeIndex].quote}&quot;
             </p>
 
             {/* Author Profile Details */}
@@ -178,7 +177,7 @@ export default function Testimonials() {
                   <span className="text-[10px] font-bold text-[#D9531E] uppercase">{t.location.split(",")[0]}</span>
                 </div>
 
-                <p className="text-xs text-slate-300 line-clamp-2 italic mb-3">"{t.quote}"</p>
+                <p className="text-xs text-slate-300 line-clamp-2 italic mb-3">&quot;{t.quote}&quot;</p>
 
                 <div className="flex items-center gap-2">
                   <div className="w-7 h-7 rounded-lg bg-[#061224] text-white text-xs font-bold flex items-center justify-center">

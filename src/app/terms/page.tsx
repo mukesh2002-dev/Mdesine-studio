@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Scale, CheckCircle2, AlertCircle, FileCheck2, HelpCircle, Mail, Phone, MapPin, Building2 } from "lucide-react";
+import { Scale, FileCheck2, HelpCircle, Phone, Building2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions | M Design Studio - Ar. Mahesh Kumar Choudhary",

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { MapPin, Phone, Mail, Building2, CheckCircle2, Award, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export default function LocationsMap() {
   const [activeCity, setActiveCity] = useState("Patna");

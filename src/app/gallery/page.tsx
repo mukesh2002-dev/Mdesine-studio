@@ -344,7 +344,7 @@ export default function GalleryPage() {
                 Have a Project in Mind?
               </h2>
               <h3 className="text-base font-bold text-[#D9531E]">
-                Let's Build Something Amazing Together.
+                Let&apos;s Build Something Amazing Together.
               </h3>
               <p className="text-xs text-slate-300 max-w-xl">
                 Share your ideas with us and let our experts turn them into reality with creativity, precision and excellence.

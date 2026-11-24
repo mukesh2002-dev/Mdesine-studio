@@ -11,8 +11,6 @@ import {
   Send,
   ChevronLeft,
   ChevronRight,
-  BookOpen,
-  Sparkles,
   Tag,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -352,7 +350,7 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="text-2xl font-black">Have a Project in Mind?</h2>
-            <p className="text-xs text-slate-300 mt-1">Let's Build Something Amazing Together.</p>
+            <p className="text-xs text-slate-300 mt-1">Let&apos;s Build Something Amazing Together.</p>
           </div>
           <Button
             onClick={() => setIsModalOpen(true)}

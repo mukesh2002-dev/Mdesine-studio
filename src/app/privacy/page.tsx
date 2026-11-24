@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ShieldCheck, Lock, FileText, Eye, UserCheck, HelpCircle, Mail, Phone, MapPin } from "lucide-react";
+import { ShieldCheck, Lock, HelpCircle, Mail, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | M Design Studio - Ar. Mahesh Kumar Choudhary",

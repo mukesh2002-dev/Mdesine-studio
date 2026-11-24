@@ -37,7 +37,6 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [servicesDropdown, setServicesDropdown] = useState(false);
 
   return (
     <>

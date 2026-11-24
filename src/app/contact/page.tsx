@@ -72,11 +72,11 @@ export default function ContactPage() {
             </h1>
 
             <h2 className="text-xl sm:text-2xl font-bold text-[#D9531E]">
-              Let's Build Something Amazing Together
+              Let&apos;s Build Something Amazing Together
             </h2>
 
             <p className="text-slate-300 text-sm leading-relaxed">
-              We'd love to hear about your project. Reach out to us for consultations, collaborations, or any queries.
+              We&apos;d love to hear about your project. Reach out to us for consultations, collaborations, or any queries.
             </p>
 
             {/* 4 Pill Badges Strip */}
@@ -408,7 +408,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="font-bold text-sm text-[#061224]">End-to-End Support</h3>
                 <p className="text-xs text-slate-500 leading-relaxed">
-                  From planning to execution, we're with you at every step.
+                  From planning to execution, we&apos;re with you at every step.
                 </p>
               </div>
 
@@ -432,7 +432,7 @@ export default function ContactPage() {
               <div className="space-y-1">
                 <h2 className="text-xl font-bold text-white">Ready to Start Your Project?</h2>
                 <p className="text-xs text-slate-300">
-                  Let's turn your ideas into reality. Schedule a  consultation with our experts today.
+                  Let&apos;s turn your ideas into reality. Schedule a consultation with our experts today.
                 </p>
               </div>
             </div>
